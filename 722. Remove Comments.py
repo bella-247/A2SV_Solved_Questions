@@ -1,40 +1,34 @@
 class Solution:
     def removeComments(self, source: List[str]) -> List[str]:
-        block_comment = False
         result = []
+        block_comment = False
         current_line = []
 
-        for i in range(len(source)):
-            line = source[i]
-            j = 0
+        for line in source:
+            leng = len(line)
 
-            while j < (len(line)):
-                if block_comment:
-                    if j < len(line) - 1 and line[j] == "*" and line[j + 1] == "/":
-                        block_comment = False
-                        j += 1
+            i = 0
+            while i < leng:
+                if not block_comment and i < leng - 1 and line[i:i+2] == "//":
+                    break
 
-                else:  # not in block comment mode
-                    if line[j] == "/" and j < len(line) - 1:
-                        if line[j + 1] == "*":
-                            block_comment = True
-                            j += 1
+                elif not block_comment and i < leng - 1 and line[i:i+2] == "/*":
+                    block_comment = True
+                    i += 2
+                    continue
 
-                        elif line[j + 1] == "/":  # line comment
-                            break
+                elif block_comment and i < leng - 1 and line[i:i+2] == "*/":
+                    block_comment = False
+                    i += 2
+                    continue
 
-                        else:
-                            current_line.append(line[j])
+                if not block_comment:
+                    current_line.append(line[i])
 
-                    else:
-                        current_line.append(line[j])
-
-                j += 1
+                i += 1
 
             if not block_comment:
-                line = "".join(current_line)
-                if line:
-                    result.append(line)
+                result.append("".join(current_line))
                 current_line = []
 
-        return result
+        return [line for line in result if line]
