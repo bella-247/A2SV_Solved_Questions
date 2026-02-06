@@ -9,15 +9,15 @@ class Solution:
 
             i = 0
             while i < leng:
-                if not block_comment and i < leng - 1 and line[i:i+2] == "//":
+                if not block_comment and line[i:i+2] == "//":
                     break
 
-                elif not block_comment and i < leng - 1 and line[i:i+2] == "/*":
+                elif not block_comment and line[i:i+2] == "/*":
                     block_comment = True
                     i += 2
                     continue
 
-                elif block_comment and i < leng - 1 and line[i:i+2] == "*/":
+                elif block_comment and line[i:i+2] == "*/":
                     block_comment = False
                     i += 2
                     continue
@@ -28,7 +28,9 @@ class Solution:
                 i += 1
 
             if not block_comment:
-                result.append("".join(current_line))
+                newLine = "".join(current_line)
+                if newLine:
+                    result.append(newLine)
                 current_line = []
 
-        return [line for line in result if line]
+        return result
