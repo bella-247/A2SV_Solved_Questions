@@ -23,6 +23,7 @@ Solving A2SV provided questions
 - [1112. Find Words That Can Be Formed By Characters](1112-find-words-that-can-be-formed-by-characters.py)
 - [2413. Smallest Even Multiple](2413.%20Smallest%20Even%20Multiple.py)
 - [2469. Convert the Temperature](2469.%20Convert%20the%20Temperature.py)
+- [2778. Frequency Tracker](2778-frequency-tracker.py)
 - [3651. Transformed Array](3651-transformed-array.py)
 
 ### Codeforces Problems
@@ -71,7 +72,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 53**
+**Total Problems Solved: 54**
+
 
 
 
