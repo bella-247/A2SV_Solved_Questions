@@ -5,6 +5,7 @@ Solving A2SV provided questions
 ### LeetCode Problems
 - [9. Palindrome Number](9.%20Palindrome%20Number.py)
 - [14. Longest Common Prefix](14.%20Longest%20Common%20Prefix.py)
+- [49. Group Anagrams](0049-group-anagrams.py)
 - [56. Merge Intervals](0056-merge-intervals.py)
 - [57. Insert Interval](0057-insert-interval.py)
 - [58. Length Of Last Word](0058-length-of-last-word.py)
@@ -74,7 +75,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 56**
+**Total Problems Solved: 57**
+
 
 
 
