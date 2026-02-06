@@ -9,6 +9,7 @@ Solving A2SV provided questions
 - [57. Insert Interval](0057-insert-interval.py)
 - [58. Length Of Last Word](0058-length-of-last-word.py)
 - [101. Symmetric Tree](0101-symmetric-tree.py)
+- [136. Single Number](0136-single-number.py)
 - [202. Happy Number](0202-happy-number.py)
 - [268. Missing Number](268.%20Missing%20Number.py)
 - [299. Bulls And Cows](0299-bulls-and-cows.py)
@@ -70,7 +71,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 52**
+**Total Problems Solved: 53**
+
 
 
 
