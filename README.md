@@ -11,6 +11,7 @@ Solving A2SV provided questions
 - [101. Symmetric Tree](0101-symmetric-tree.py)
 - [136. Single Number](0136-single-number.py)
 - [202. Happy Number](0202-happy-number.py)
+- [229. Majority Element Ii](0229-majority-element-ii.py)
 - [268. Missing Number](268.%20Missing%20Number.py)
 - [299. Bulls And Cows](0299-bulls-and-cows.py)
 - [442. Find All Duplicates In An Array](0442-find-all-duplicates-in-an-array.py)
@@ -72,7 +73,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 54**
+**Total Problems Solved: 55**
+
 
 
 
