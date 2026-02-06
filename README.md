@@ -62,6 +62,7 @@ Solving A2SV provided questions
 ### Other Problems
 - [Arithmetic Operators](Arithmetic%20Operators.py)
 - [Array Subset](Array%20Subset.py)
+- [CF-486A-calculating-function](CF-486A-calculating-function.py)
 - [Division](Division.py)
 - [HR-nested-list-nested-lists](HR-nested-list-nested-lists.py)
 - [If-Else](If-Else.py)
@@ -77,7 +78,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 59**
+**Total Problems Solved: 60**
+
 
 
 
