@@ -68,6 +68,9 @@ def generate_toc(repo_path: str) -> str:
     
     for filename in py_files:
         category, number, title = extract_problem_info(filename)
+        # Handle unexpected categories by defaulting to 'other'
+        if category not in problems:
+            category = 'other'
         problems[category].append((number, title, filename))
     
     # Sort each category
@@ -85,9 +88,16 @@ def generate_toc(repo_path: str) -> str:
     # LeetCode section
     if problems['leetcode']:
         toc_lines.append("### LeetCode Problems\n")
+        # Group by problem number to detect duplicates
+        seen_numbers = {}
         for num, title, filename in problems['leetcode']:
             encoded_filename = quote(filename)
-            toc_lines.append(f"- [{title}]({encoded_filename})\n")
+            if num in seen_numbers:
+                # This is a duplicate - mark it as alternative version
+                toc_lines.append(f"- [{title}]({encoded_filename}) (alternative version)\n")
+            else:
+                toc_lines.append(f"- [{title}]({encoded_filename})\n")
+                seen_numbers[num] = True
         toc_lines.append("\n")
     
     # Codeforces section
@@ -133,28 +143,35 @@ def update_readme(repo_path: str):
     new_toc = generate_toc(repo_path)
     
     # Find the TOC section and replace it
-    # Pattern: from "## Table of Contents" to either the next "##" heading or "---" separator
-    # This handles the TOC ending with the "---" line before "**Total Problems Solved:**"
-    toc_pattern = r'## Table of Contents\n.*?\*\*Total Problems Solved: \d+\*\*\n'
-    
-    if re.search(toc_pattern, content, re.DOTALL):
-        # Replace existing TOC
-        new_content = re.sub(toc_pattern, new_toc, content, flags=re.DOTALL)
-    else:
-        # Try alternate pattern without the total line
-        toc_pattern_alt = r'## Table of Contents\n.*?(?=\n##|\Z)'
-        if re.search(toc_pattern_alt, content, re.DOTALL):
-            new_content = re.sub(toc_pattern_alt, new_toc.rstrip(), content, flags=re.DOTALL)
+    # Use a flexible approach: find start and end markers separately
+    toc_start = content.find('## Table of Contents')
+    if toc_start != -1:
+        # Find the end of TOC - look for the "Total Problems Solved" line
+        total_pattern = r'\*\*Total Problems Solved: \d+\*\*'
+        match = re.search(total_pattern, content[toc_start:])
+        if match:
+            toc_end = toc_start + match.end()
+            # Replace the TOC section
+            new_content = content[:toc_start] + new_toc + content[toc_end:]
         else:
-            # Add TOC after the first heading and description
-            lines = content.split('\n')
-            # Find where to insert (after title and description)
-            insert_idx = 2  # After title and description line
-            if len(lines) > insert_idx:
-                lines.insert(insert_idx, '\n' + new_toc)
-                new_content = '\n'.join(lines)
+            # Fallback: replace until next heading or end
+            next_heading = re.search(r'\n##[^#]', content[toc_start + 20:])
+            if next_heading:
+                toc_end = toc_start + 20 + next_heading.start()
+                new_content = content[:toc_start] + new_toc.rstrip() + '\n' + content[toc_end:]
             else:
-                new_content = content + '\n\n' + new_toc
+                # Replace to end of file
+                new_content = content[:toc_start] + new_toc
+    else:
+        # Add TOC after the first heading and description
+        lines = content.split('\n')
+        # Find where to insert (after title and description)
+        insert_idx = 2  # After title and description line
+        if len(lines) > insert_idx:
+            lines.insert(insert_idx, '\n' + new_toc)
+            new_content = '\n'.join(lines)
+        else:
+            new_content = content + '\n\n' + new_toc
     
     # Write updated README
     with open(readme_path, 'w', encoding='utf-8') as f:

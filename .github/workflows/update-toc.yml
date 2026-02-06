@@ -24,9 +24,6 @@ jobs:
         with:
           python-version: '3.x'
       
-      - name: Make script executable
-        run: chmod +x .github/scripts/update_toc.py
-      
       - name: Update Table of Contents
         run: python .github/scripts/update_toc.py
         env:

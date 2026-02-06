@@ -16,7 +16,7 @@ Solving A2SV provided questions
 - [599. Minimum Index Sum Of Two Lists](0599-minimum-index-sum-of-two-lists.py)
 - [609. Find Duplicate File In System](0609-find-duplicate-file-in-system.py)
 - [722. Remove Comments](0722-remove-comments.py)
-- [722. Remove Comments](722.%20Remove%20Comments.py)
+- [722. Remove Comments](722.%20Remove%20Comments.py) (alternative version)
 - [829. Subdomain Visit Count](0829-subdomain-visit-count.py)
 - [969. Pancake Sorting](969.%20Pancake%20Sorting.py)
 - [1112. Find Words That Can Be Formed By Characters](1112-find-words-that-can-be-formed-by-characters.py)
@@ -62,3 +62,4 @@ Solving A2SV provided questions
 ---
 
 **Total Problems Solved: 45**
+
