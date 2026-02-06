@@ -27,7 +27,9 @@ Solving A2SV provided questions
 ### Codeforces Problems
 
 #### Division A
+- [A. Anton and Polyhedrons](A_Anton_and_Polyhedrons.py)
 - [A. Array and Peaks](A_Array_and_Peaks.py)
+- [A. Calculating Function](A_Calculating_Function.py)
 - [A. Chat room](A_Chat_room.py)
 - [A. Doors and Keys](A_Doors_and_Keys.py)
 - [A. Game 23](A_Game_23.py)
@@ -39,10 +41,17 @@ Solving A2SV provided questions
 - [B. Ashmal](B_Ashmal.py)
 - [B. Following the String](B_Following_the_String.py)
 - [B. Pile Shuffling](B_Pile_Shuffling.py)
+- [B. Rebranding](B_Rebranding.py)
+- [B. Watermelon](B_Watermelon.py)
+
+#### Division C
+- [C. Left and Right Houses](C_Left_and_Right_Houses.py)
+- [C. Petya and Strings](C_Petya_and_Strings.py)
 
 #### Division D
 - [D. Distinct Split](D_Distinct_Split.py)
 - [D. Harder Problem](D_Harder_Problem.py)
+- [D. Next Round](D_Next_Round.py)
 
 ### Other Problems
 - [Arithmetic Operators](Arithmetic%20Operators.py)
@@ -61,6 +70,7 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 45**
+**Total Problems Solved: 52**
+
 
 
