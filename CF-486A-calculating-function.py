@@ -2,6 +2,7 @@
 # Calculating Function
 
 **Difficulty:** 800
+**Tags:** implementation, math, 800
 **URL:** https://codeforces.com/contest/486/problem/A
 
 ## Problem
