@@ -41,23 +41,30 @@ Solving A2SV provided questions
 - [A. Game 23](A_Game_23.py)
 - [A. Jellyfish and Undertale](A_Jellyfish_and_Undertale.py)
 - [A. Needle in a Haystack](A_Needle_in_a_Haystack.py)
+- [A. New Year String](A_New_Year_String.py)
 
 #### Division B
 - [B. Addition on a Segment](B_Addition_on_a_Segment.py)
 - [B. Ashmal](B_Ashmal.py)
 - [B. Following the String](B_Following_the_String.py)
+- [B. Kidus s Scrambled Notebook](B_Kidus_s_Scrambled_Notebook.py)
 - [B. Pile Shuffling](B_Pile_Shuffling.py)
 - [B. Rebranding](B_Rebranding.py)
 - [B. Watermelon](B_Watermelon.py)
 
 #### Division C
 - [C. Left and Right Houses](C_Left_and_Right_Houses.py)
+- [C. Ludis s Ranker](C_Ludis_s_Ranker.py)
 - [C. Petya and Strings](C_Petya_and_Strings.py)
 
 #### Division D
 - [D. Distinct Split](D_Distinct_Split.py)
 - [D. Harder Problem](D_Harder_Problem.py)
+- [D. Mash and the Awash River](D_Mash_and_the_Awash_River.py)
 - [D. Next Round](D_Next_Round.py)
+
+#### Division E
+- [E. From S To T](E_From_S_To_T.py)
 
 ### Other Problems
 - [Arithmetic Operators](Arithmetic%20Operators.py)
@@ -79,7 +86,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 61**
+**Total Problems Solved: 66**
+
 
 
 
