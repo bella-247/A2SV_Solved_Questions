@@ -25,6 +25,7 @@ Solving A2SV provided questions
 - [829. Subdomain Visit Count](0829-subdomain-visit-count.py)
 - [969. Pancake Sorting](969.%20Pancake%20Sorting.py)
 - [1112. Find Words That Can Be Formed By Characters](1112-find-words-that-can-be-formed-by-characters.py)
+- [1411. Convert Binary Number In A Linked List To Integer](1411-convert-binary-number-in-a-linked-list-to-integer.py)
 - [2413. Smallest Even Multiple](2413.%20Smallest%20Even%20Multiple.py)
 - [2469. Convert the Temperature](2469.%20Convert%20the%20Temperature.py)
 - [2605. Count Anagrams](2605-count-anagrams.py)
@@ -88,7 +89,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 68**
+**Total Problems Solved: 69**
+
 
 
 
