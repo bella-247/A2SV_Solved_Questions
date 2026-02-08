@@ -72,6 +72,7 @@ Solving A2SV provided questions
 ### Other Problems
 - [Arithmetic Operators](Arithmetic%20Operators.py)
 - [Array Subset](Array%20Subset.py)
+- [CF-1873A-short-sort](CF-1873A-short-sort.py)
 - [CF-486A-calculating-function](CF-486A-calculating-function.py)
 - [CF-48A-rock-paper-scissors](CF-48A-rock-paper-scissors.py)
 - [Division](Division.py)
@@ -90,7 +91,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 70**
+**Total Problems Solved: 71**
+
 
 
 
