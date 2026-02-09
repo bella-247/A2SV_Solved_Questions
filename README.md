@@ -19,6 +19,7 @@ Solving A2SV provided questions
 - [268. Missing Number](268.%20Missing%20Number.py)
 - [299. Bulls And Cows](0299-bulls-and-cows.py)
 - [347. Top K Frequent Elements](0347-top-k-frequent-elements.py)
+- [380. Insert Delete Getrandom O1](0380-insert-delete-getrandom-o1.py)
 - [387. First Unique Character In A String](0387-first-unique-character-in-a-string.py)
 - [442. Find All Duplicates In An Array](0442-find-all-duplicates-in-an-array.py)
 - [599. Minimum Index Sum Of Two Lists](0599-minimum-index-sum-of-two-lists.py)
@@ -101,7 +102,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 81**
+**Total Problems Solved: 82**
+
 
 
 
