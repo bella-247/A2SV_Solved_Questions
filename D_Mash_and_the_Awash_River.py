@@ -1,13 +1,17 @@
+from collections import Counter
+
 for _ in range(int(input())):
     s = input()
     n = len(s)
     
-    if "**" in s or ">*" in s or "*<" in s or "><" in s:
-        print(-1)
-        continue
+    counts = Counter()
     
-    left_count = s.count("<")
-    right_count = s.count(">")
-    random_count = s.count("*")
-
-    print(max(left_count, right_count) + random_count)
+    for i in range(n):
+        if i < n - 1 and s[i] in "*>" and s[i + 1] in "*<":
+            print(-1)
+            break
+        else:
+            counts[s[i]] += 1
+            
+    else:
+        print(max(counts["<"], counts[">"]) + counts["*"])
