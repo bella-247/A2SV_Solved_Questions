@@ -1,7 +1,7 @@
 """
 Title: Separate the Digits in an Array
 Difficulty: Easy
-Time: 5min
+Time: 5 min
 URL: https://leetcode.com/problems/separate-the-digits-in-an-array/
 
 Given an array of positive integers nums, return an array answer that consists of the digits of each integer in nums after separating them in the same order they appear in nums.
