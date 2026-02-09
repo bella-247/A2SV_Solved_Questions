@@ -34,6 +34,7 @@ Solving A2SV provided questions
 - [2413. Smallest Even Multiple](2413.%20Smallest%20Even%20Multiple.py)
 - [2469. Convert the Temperature](2469.%20Convert%20the%20Temperature.py)
 - [2605. Count Anagrams](2605-count-anagrams.py)
+- [2639. Separate The Digits In An Array](2639-separate-the-digits-in-an-array.py)
 - [2778. Frequency Tracker](2778-frequency-tracker.py)
 - [2871. Double A Number Represented As A Linked List](2871-double-a-number-represented-as-a-linked-list.py)
 - [3651. Transformed Array](3651-transformed-array.py)
@@ -98,7 +99,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 78**
+**Total Problems Solved: 79**
+
 
 
 
