@@ -40,6 +40,7 @@ Solving A2SV provided questions
 
 #### Division A
 - [A. Anton and Polyhedrons](A_Anton_and_Polyhedrons.py)
+- [A. Array Coloring](A_Array_Coloring.py)
 - [A. Array and Peaks](A_Array_and_Peaks.py)
 - [A. Calculating Function](A_Calculating_Function.py)
 - [A. Chat room](A_Chat_room.py)
@@ -48,6 +49,7 @@ Solving A2SV provided questions
 - [A. Jellyfish and Undertale](A_Jellyfish_and_Undertale.py)
 - [A. Needle in a Haystack](A_Needle_in_a_Haystack.py)
 - [A. New Year String](A_New_Year_String.py)
+- [A. Rock paper scissors](A_Rock_paper_scissors.py)
 
 #### Division B
 - [B. Addition on a Segment](B_Addition_on_a_Segment.py)
@@ -94,7 +96,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 74**
+**Total Problems Solved: 76**
+
 
 
 
