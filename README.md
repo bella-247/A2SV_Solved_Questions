@@ -13,9 +13,12 @@ Solving A2SV provided questions
 - [101. Symmetric Tree](0101-symmetric-tree.py)
 - [136. Single Number](0136-single-number.py)
 - [202. Happy Number](0202-happy-number.py)
+- [206. Reverse Linked List](0206-reverse-linked-list.py)
 - [229. Majority Element Ii](0229-majority-element-ii.py)
 - [268. Missing Number](268.%20Missing%20Number.py)
 - [299. Bulls And Cows](0299-bulls-and-cows.py)
+- [347. Top K Frequent Elements](0347-top-k-frequent-elements.py)
+- [387. First Unique Character In A String](0387-first-unique-character-in-a-string.py)
 - [442. Find All Duplicates In An Array](0442-find-all-duplicates-in-an-array.py)
 - [599. Minimum Index Sum Of Two Lists](0599-minimum-index-sum-of-two-lists.py)
 - [609. Find Duplicate File In System](0609-find-duplicate-file-in-system.py)
@@ -24,10 +27,13 @@ Solving A2SV provided questions
 - [829. Subdomain Visit Count](0829-subdomain-visit-count.py)
 - [969. Pancake Sorting](969.%20Pancake%20Sorting.py)
 - [1112. Find Words That Can Be Formed By Characters](1112-find-words-that-can-be-formed-by-characters.py)
+- [1411. Convert Binary Number In A Linked List To Integer](1411-convert-binary-number-in-a-linked-list-to-integer.py)
+- [1469. Minimum Number Of Steps To Make Two Strings Anagram](1469-minimum-number-of-steps-to-make-two-strings-anagram.py)
 - [2413. Smallest Even Multiple](2413.%20Smallest%20Even%20Multiple.py)
 - [2469. Convert the Temperature](2469.%20Convert%20the%20Temperature.py)
 - [2605. Count Anagrams](2605-count-anagrams.py)
 - [2778. Frequency Tracker](2778-frequency-tracker.py)
+- [2871. Double A Number Represented As A Linked List](2871-double-a-number-represented-as-a-linked-list.py)
 - [3651. Transformed Array](3651-transformed-array.py)
 
 ### Codeforces Problems
@@ -69,7 +75,9 @@ Solving A2SV provided questions
 ### Other Problems
 - [Arithmetic Operators](Arithmetic%20Operators.py)
 - [Array Subset](Array%20Subset.py)
+- [CF-1873A-short-sort](CF-1873A-short-sort.py)
 - [CF-486A-calculating-function](CF-486A-calculating-function.py)
+- [CF-48A-rock-paper-scissors](CF-48A-rock-paper-scissors.py)
 - [Division](Division.py)
 - [HR-list-comprehensions-list-comprehensions](HR-list-comprehensions-list-comprehensions.py)
 - [HR-nested-list-nested-lists](HR-nested-list-nested-lists.py)
@@ -86,7 +94,15 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 66**
+**Total Problems Solved: 74**
+
+
+
+
+
+
+
+
 
 
 
