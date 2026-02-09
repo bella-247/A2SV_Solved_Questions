@@ -27,6 +27,7 @@ Solving A2SV provided questions
 - [722. Remove Comments](722.%20Remove%20Comments.py) (alternative version)
 - [829. Subdomain Visit Count](0829-subdomain-visit-count.py)
 - [969. Pancake Sorting](969.%20Pancake%20Sorting.py)
+- [1027. Sum Of Even Numbers After Queries](1027-sum-of-even-numbers-after-queries.py)
 - [1112. Find Words That Can Be Formed By Characters](1112-find-words-that-can-be-formed-by-characters.py)
 - [1411. Convert Binary Number In A Linked List To Integer](1411-convert-binary-number-in-a-linked-list-to-integer.py)
 - [1469. Minimum Number Of Steps To Make Two Strings Anagram](1469-minimum-number-of-steps-to-make-two-strings-anagram.py)
@@ -100,7 +101,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 80**
+**Total Problems Solved: 81**
+
 
 
 
