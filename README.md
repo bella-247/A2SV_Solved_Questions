@@ -17,6 +17,7 @@ Solving A2SV provided questions
 - [229. Majority Element Ii](0229-majority-element-ii.py)
 - [268. Missing Number](268.%20Missing%20Number.py)
 - [299. Bulls And Cows](0299-bulls-and-cows.py)
+- [387. First Unique Character In A String](0387-first-unique-character-in-a-string.py)
 - [442. Find All Duplicates In An Array](0442-find-all-duplicates-in-an-array.py)
 - [599. Minimum Index Sum Of Two Lists](0599-minimum-index-sum-of-two-lists.py)
 - [609. Find Duplicate File In System](0609-find-duplicate-file-in-system.py)
@@ -91,7 +92,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 71**
+**Total Problems Solved: 72**
+
 
 
 
