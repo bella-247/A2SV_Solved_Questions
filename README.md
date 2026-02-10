@@ -12,6 +12,7 @@ Solving A2SV provided questions
 - [57. Insert Interval](0057-insert-interval.py)
 - [58. Length Of Last Word](0058-length-of-last-word.py)
 - [101. Symmetric Tree](0101-symmetric-tree.py)
+- [128. Longest Consecutive Sequence](0128-longest-consecutive-sequence.py)
 - [136. Single Number](0136-single-number.py)
 - [202. Happy Number](0202-happy-number.py)
 - [206. Reverse Linked List](0206-reverse-linked-list.py)
@@ -106,7 +107,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 86**
+**Total Problems Solved: 87**
+
 
 
 
