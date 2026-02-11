@@ -17,6 +17,7 @@ Solving A2SV provided questions
 - [136. Single Number](0136-single-number.py)
 - [202. Happy Number](0202-happy-number.py)
 - [206. Reverse Linked List](0206-reverse-linked-list.py)
+- [217. Contains Duplicate](0217-contains-duplicate.py)
 - [229. Majority Element Ii](0229-majority-element-ii.py)
 - [242. Valid Anagram](0242-valid-anagram.py)
 - [268. Missing Number](268.%20Missing%20Number.py)
@@ -108,7 +109,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 88**
+**Total Problems Solved: 89**
+
 
 
 
