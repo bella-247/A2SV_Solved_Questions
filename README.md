@@ -26,6 +26,7 @@ Solving A2SV provided questions
 - [380. Insert Delete Getrandom O1](0380-insert-delete-getrandom-o1.py)
 - [387. First Unique Character In A String](0387-first-unique-character-in-a-string.py)
 - [442. Find All Duplicates In An Array](0442-find-all-duplicates-in-an-array.py)
+- [451. Sort Characters By Frequency](0451-sort-characters-by-frequency.py)
 - [599. Minimum Index Sum Of Two Lists](0599-minimum-index-sum-of-two-lists.py)
 - [609. Find Duplicate File In System](0609-find-duplicate-file-in-system.py)
 - [722. Remove Comments](0722-remove-comments.py)
@@ -110,7 +111,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 90**
+**Total Problems Solved: 91**
+
 
 
 
