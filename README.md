@@ -92,6 +92,7 @@ Solving A2SV provided questions
 ### Other Problems
 - [Arithmetic Operators](Arithmetic%20Operators.py)
 - [Array Subset](Array%20Subset.py)
+- [CF-1374D-zero-remainder-array](CF-1374D-zero-remainder-array.py)
 - [CF-1605C-dominant-character](CF-1605C-dominant-character.py)
 - [CF-1873A-short-sort](CF-1873A-short-sort.py)
 - [CF-2191A-array-coloring](CF-2191A-array-coloring.py)
@@ -114,7 +115,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 94**
+**Total Problems Solved: 95**
+
 
 
 
