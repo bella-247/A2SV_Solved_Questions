@@ -105,6 +105,7 @@ Solving A2SV provided questions
 - [CF-486A-calculating-function](CF-486A-calculating-function.py)
 - [CF-48A-rock-paper-scissors](CF-48A-rock-paper-scissors.py)
 - [CF-4A-watermelon](CF-4A-watermelon.py)
+- [CF-863D-yet-another-array-queries-problem](CF-863D-yet-another-array-queries-problem.py)
 - [Division](Division.py)
 - [HR-list-comprehensions-list-comprehensions](HR-list-comprehensions-list-comprehensions.py)
 - [HR-nested-list-nested-lists](HR-nested-list-nested-lists.py)
@@ -121,7 +122,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 101**
+**Total Problems Solved: 102**
+
 
 
 
