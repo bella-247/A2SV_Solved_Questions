@@ -102,6 +102,7 @@ Solving A2SV provided questions
 - [CF-1374D-zero-remainder-array](CF-1374D-zero-remainder-array.py)
 - [CF-1605C-dominant-character](CF-1605C-dominant-character.py)
 - [CF-1873A-short-sort](CF-1873A-short-sort.py)
+- [CF-1873B-good-kid](CF-1873B-good-kid.py)
 - [CF-2191A-array-coloring](CF-2191A-array-coloring.py)
 - [CF-362408924-submission-362408924-codeforces](CF-362408924-submission-362408924-codeforces.py)
 - [CF-486A-calculating-function](CF-486A-calculating-function.py)
@@ -124,7 +125,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 104**
+**Total Problems Solved: 105**
+
 
 
 
