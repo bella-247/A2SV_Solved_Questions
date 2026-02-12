@@ -13,6 +13,7 @@ Solving A2SV provided questions
 - [56. Merge Intervals](0056-merge-intervals.py)
 - [57. Insert Interval](0057-insert-interval.py)
 - [58. Length Of Last Word](0058-length-of-last-word.py)
+- [73. Set Matrix Zeroes](0073-set-matrix-zeroes.py)
 - [101. Symmetric Tree](0101-symmetric-tree.py)
 - [128. Longest Consecutive Sequence](0128-longest-consecutive-sequence.py)
 - [136. Single Number](0136-single-number.py)
@@ -122,7 +123,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 102**
+**Total Problems Solved: 103**
+
 
 
 
