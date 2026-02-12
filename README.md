@@ -104,6 +104,7 @@ Solving A2SV provided questions
 - [CF-1873A-short-sort](CF-1873A-short-sort.py)
 - [CF-1873B-good-kid](CF-1873B-good-kid.py)
 - [CF-2191A-array-coloring](CF-2191A-array-coloring.py)
+- [CF-263A-beautiful-matrix](CF-263A-beautiful-matrix.py)
 - [CF-362408924-submission-362408924-codeforces](CF-362408924-submission-362408924-codeforces.py)
 - [CF-486A-calculating-function](CF-486A-calculating-function.py)
 - [CF-48A-rock-paper-scissors](CF-48A-rock-paper-scissors.py)
@@ -125,7 +126,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 105**
+**Total Problems Solved: 106**
+
 
 
 
