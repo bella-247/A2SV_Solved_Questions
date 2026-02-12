@@ -10,6 +10,7 @@ Solving A2SV provided questions
 - [14. Longest Common Prefix](14.%20Longest%20Common%20Prefix.py)
 - [48. Rotate Image](0048-rotate-image.py)
 - [49. Group Anagrams](0049-group-anagrams.py)
+- [54. Spiral Matrix](0054-spiral-matrix.py)
 - [56. Merge Intervals](0056-merge-intervals.py)
 - [57. Insert Interval](0057-insert-interval.py)
 - [58. Length Of Last Word](0058-length-of-last-word.py)
@@ -33,8 +34,8 @@ Solving A2SV provided questions
 - [451. Sort Characters By Frequency](0451-sort-characters-by-frequency.py)
 - [599. Minimum Index Sum Of Two Lists](0599-minimum-index-sum-of-two-lists.py)
 - [609. Find Duplicate File In System](0609-find-duplicate-file-in-system.py)
-- [722. Remove Comments](0722-remove-comments.py)
-- [722. Remove Comments](722.%20Remove%20Comments.py) (alternative version)
+- [722. Remove Comments](722.%20Remove%20Comments.py)
+- [722. Remove Comments](0722-remove-comments.py) (alternative version)
 - [829. Subdomain Visit Count](0829-subdomain-visit-count.py)
 - [898. Transpose Matrix](0898-transpose-matrix.py)
 - [969. Pancake Sorting](969.%20Pancake%20Sorting.py)
@@ -123,7 +124,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 103**
+**Total Problems Solved: 104**
+
 
 
 
