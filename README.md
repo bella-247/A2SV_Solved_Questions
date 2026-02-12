@@ -38,6 +38,7 @@ Solving A2SV provided questions
 - [1411. Convert Binary Number In A Linked List To Integer](1411-convert-binary-number-in-a-linked-list-to-integer.py)
 - [1469. Minimum Number Of Steps To Make Two Strings Anagram](1469-minimum-number-of-steps-to-make-two-strings-anagram.py)
 - [1651. Shuffle String](1651-shuffle-string.py)
+- [1777. Determine If Two Strings Are Close](1777-determine-if-two-strings-are-close.py)
 - [2117. Find Original Array From Doubled Array](2117-find-original-array-from-doubled-array.py)
 - [2278. Find Three Consecutive Integers That Sum To A Given Number](2278-find-three-consecutive-integers-that-sum-to-a-given-number.py)
 - [2413. Smallest Even Multiple](2413.%20Smallest%20Even%20Multiple.py)
@@ -115,7 +116,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 95**
+**Total Problems Solved: 96**
+
 
 
 
