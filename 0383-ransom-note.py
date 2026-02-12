@@ -40,13 +40,13 @@ class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         magazine_counts = Counter(magazine)
 
+        # checks every character of ransomNote is in magazine, 
+        # and magazine has equal or more number of that character 
         for char in ransomNote:
-            if char not in magazine_counts:
+            if magazine_counts[char] == 0:
                 return False
 
+            # decrement used characters frequency
             magazine_counts[char] -= 1
-
-            if magazine_counts[char] == 0:
-                del magazine_counts[char]
 
         return True
