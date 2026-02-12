@@ -8,6 +8,7 @@ Solving A2SV provided questions
 - [12. Integer To Roman](0012-integer-to-roman.py)
 - [13. Roman To Integer](0013-roman-to-integer.py)
 - [14. Longest Common Prefix](14.%20Longest%20Common%20Prefix.py)
+- [48. Rotate Image](0048-rotate-image.py)
 - [49. Group Anagrams](0049-group-anagrams.py)
 - [56. Merge Intervals](0056-merge-intervals.py)
 - [57. Insert Interval](0057-insert-interval.py)
@@ -34,6 +35,7 @@ Solving A2SV provided questions
 - [722. Remove Comments](0722-remove-comments.py)
 - [722. Remove Comments](722.%20Remove%20Comments.py) (alternative version)
 - [829. Subdomain Visit Count](0829-subdomain-visit-count.py)
+- [898. Transpose Matrix](0898-transpose-matrix.py)
 - [969. Pancake Sorting](969.%20Pancake%20Sorting.py)
 - [1027. Sum Of Even Numbers After Queries](1027-sum-of-even-numbers-after-queries.py)
 - [1112. Find Words That Can Be Formed By Characters](1112-find-words-that-can-be-formed-by-characters.py)
@@ -119,7 +121,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 99**
+**Total Problems Solved: 101**
+
 
 
 
