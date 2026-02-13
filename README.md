@@ -33,6 +33,7 @@ Solving A2SV provided questions
 - [387. First Unique Character In A String](0387-first-unique-character-in-a-string.py)
 - [442. Find All Duplicates In An Array](0442-find-all-duplicates-in-an-array.py)
 - [451. Sort Characters By Frequency](0451-sort-characters-by-frequency.py)
+- [498. Diagonal Traverse](0498-diagonal-traverse.py)
 - [599. Minimum Index Sum Of Two Lists](0599-minimum-index-sum-of-two-lists.py)
 - [609. Find Duplicate File In System](0609-find-duplicate-file-in-system.py)
 - [661. Image Smoother](0661-image-smoother.py)
@@ -132,7 +133,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 112**
+**Total Problems Solved: 113**
+
 
 
 
