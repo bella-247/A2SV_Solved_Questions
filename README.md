@@ -39,6 +39,7 @@ Solving A2SV provided questions
 - [722. Remove Comments](722.%20Remove%20Comments.py)
 - [722. Remove Comments](0722-remove-comments.py) (alternative version)
 - [829. Subdomain Visit Count](0829-subdomain-visit-count.py)
+- [861. Flipping An Image](0861-flipping-an-image.py)
 - [898. Transpose Matrix](0898-transpose-matrix.py)
 - [969. Pancake Sorting](969.%20Pancake%20Sorting.py)
 - [1027. Sum Of Even Numbers After Queries](1027-sum-of-even-numbers-after-queries.py)
@@ -130,7 +131,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 110**
+**Total Problems Solved: 111**
+
 
 
 
