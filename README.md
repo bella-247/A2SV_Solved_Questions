@@ -45,6 +45,7 @@ Solving A2SV provided questions
 - [1112. Find Words That Can Be Formed By Characters](1112-find-words-that-can-be-formed-by-characters.py)
 - [1411. Convert Binary Number In A Linked List To Integer](1411-convert-binary-number-in-a-linked-list-to-integer.py)
 - [1469. Minimum Number Of Steps To Make Two Strings Anagram](1469-minimum-number-of-steps-to-make-two-strings-anagram.py)
+- [1476. Count Negative Numbers In A Sorted Matrix](1476-count-negative-numbers-in-a-sorted-matrix.py)
 - [1651. Shuffle String](1651-shuffle-string.py)
 - [1777. Determine If Two Strings Are Close](1777-determine-if-two-strings-are-close.py)
 - [2117. Find Original Array From Doubled Array](2117-find-original-array-from-doubled-array.py)
@@ -129,7 +130,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 109**
+**Total Problems Solved: 110**
+
 
 
 
