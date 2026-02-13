@@ -35,6 +35,7 @@ Solving A2SV provided questions
 - [451. Sort Characters By Frequency](0451-sort-characters-by-frequency.py)
 - [599. Minimum Index Sum Of Two Lists](0599-minimum-index-sum-of-two-lists.py)
 - [609. Find Duplicate File In System](0609-find-duplicate-file-in-system.py)
+- [661. Image Smoother](0661-image-smoother.py)
 - [722. Remove Comments](722.%20Remove%20Comments.py)
 - [722. Remove Comments](0722-remove-comments.py) (alternative version)
 - [829. Subdomain Visit Count](0829-subdomain-visit-count.py)
@@ -128,7 +129,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 108**
+**Total Problems Solved: 109**
+
 
 
 
