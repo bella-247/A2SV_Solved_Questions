@@ -24,6 +24,7 @@ Solving A2SV provided questions
 - [229. Majority Element Ii](0229-majority-element-ii.py)
 - [242. Valid Anagram](0242-valid-anagram.py)
 - [268. Missing Number](268.%20Missing%20Number.py)
+- [290. Word Pattern](0290-word-pattern.py)
 - [299. Bulls And Cows](0299-bulls-and-cows.py)
 - [347. Top K Frequent Elements](0347-top-k-frequent-elements.py)
 - [349. Intersection Of Two Arrays](0349-intersection-of-two-arrays.py)
@@ -127,7 +128,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 107**
+**Total Problems Solved: 108**
+
 
 
 
