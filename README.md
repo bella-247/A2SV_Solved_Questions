@@ -50,6 +50,7 @@ Solving A2SV provided questions
 - [1476. Count Negative Numbers In A Sorted Matrix](1476-count-negative-numbers-in-a-sorted-matrix.py)
 - [1651. Shuffle String](1651-shuffle-string.py)
 - [1777. Determine If Two Strings Are Close](1777-determine-if-two-strings-are-close.py)
+- [2015. Determine Whether Matrix Can Be Obtained By Rotation](2015-determine-whether-matrix-can-be-obtained-by-rotation.py)
 - [2117. Find Original Array From Doubled Array](2117-find-original-array-from-doubled-array.py)
 - [2277. Count Equal And Divisible Pairs In An Array](2277-count-equal-and-divisible-pairs-in-an-array.py)
 - [2278. Find Three Consecutive Integers That Sum To A Given Number](2278-find-three-consecutive-integers-that-sum-to-a-given-number.py)
@@ -133,7 +134,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 113**
+**Total Problems Solved: 114**
+
 
 
 
