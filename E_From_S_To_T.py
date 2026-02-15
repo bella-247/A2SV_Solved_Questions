@@ -7,14 +7,7 @@ for _ in range(int(input())):
     countT = Counter(t)
     countP = Counter(p)
     
-    if  s == t:
-        print("YES")
-        continue
-    
-    if len(s) > len(t) or any(char not in countT or countS[char] > countT[char] for char in countS):
-        print("NO")
-        continue
-    
+    # order
     i = 0
     for j in range(len(t)):
         if s[i] == t[j]:
@@ -26,6 +19,7 @@ for _ in range(int(input())):
         print("NO")
         continue
     
+    # count
     for char, charCount in countT.items():
         if charCount > (countS[char] + countP[char]):
             print("NO")
