@@ -111,6 +111,7 @@ Solving A2SV provided questions
 - [CF-1605C-dominant-character](CF-1605C-dominant-character.py)
 - [CF-1873A-short-sort](CF-1873A-short-sort.py)
 - [CF-1873B-good-kid](CF-1873B-good-kid.py)
+- [CF-1873C-target-practice](CF-1873C-target-practice.py)
 - [CF-2070B-robot-program](CF-2070B-robot-program.py)
 - [CF-2191A-array-coloring](CF-2191A-array-coloring.py)
 - [CF-263A-beautiful-matrix](CF-263A-beautiful-matrix.py)
@@ -135,7 +136,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 115**
+**Total Problems Solved: 116**
+
 
 
 
