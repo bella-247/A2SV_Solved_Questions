@@ -43,6 +43,7 @@ Solving A2SV provided questions
 - [829. Subdomain Visit Count](0829-subdomain-visit-count.py)
 - [861. Flipping An Image](0861-flipping-an-image.py)
 - [898. Transpose Matrix](0898-transpose-matrix.py)
+- [921. Spiral Matrix Iii](0921-spiral-matrix-iii.py)
 - [969. Pancake Sorting](969.%20Pancake%20Sorting.py)
 - [1027. Sum Of Even Numbers After Queries](1027-sum-of-even-numbers-after-queries.py)
 - [1112. Find Words That Can Be Formed By Characters](1112-find-words-that-can-be-formed-by-characters.py)
@@ -138,7 +139,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 118**
+**Total Problems Solved: 119**
+
 
 
 
