@@ -81,22 +81,26 @@ Solving A2SV provided questions
 - [A. Needle in a Haystack](A_Needle_in_a_Haystack.py)
 - [A. New Year String](A_New_Year_String.py)
 - [A. Rock paper scissors](A_Rock_paper_scissors.py)
+- [A. Sieve of Erato 67 henes](A_Sieve_of_Erato_67_henes.py)
 
 #### Division B
 - [B. Addition on a Segment](B_Addition_on_a_Segment.py)
 - [B. Ashmal](B_Ashmal.py)
 - [B. Following the String](B_Following_the_String.py)
+- [B. Heapify 1](B_Heapify_1.py)
 - [B. Kidus s Scrambled Notebook](B_Kidus_s_Scrambled_Notebook.py)
 - [B. Pile Shuffling](B_Pile_Shuffling.py)
 - [B. Rebranding](B_Rebranding.py)
 - [B. Watermelon](B_Watermelon.py)
 
 #### Division C
+- [C. Dice Roll Sequence](C_Dice_Roll_Sequence.py)
 - [C. Left and Right Houses](C_Left_and_Right_Houses.py)
 - [C. Ludis s Ranker](C_Ludis_s_Ranker.py)
 - [C. Petya and Strings](C_Petya_and_Strings.py)
 
 #### Division D
+- [D. Absolute Cinema](D_Absolute_Cinema.py)
 - [D. Distinct Split](D_Distinct_Split.py)
 - [D. Harder Problem](D_Harder_Problem.py)
 - [D. Mash and the Awash River](D_Mash_and_the_Awash_River.py)
@@ -139,7 +143,8 @@ Solving A2SV provided questions
 
 ---
 
-**Total Problems Solved: 119**
+**Total Problems Solved: 123**
+
 
 
 
