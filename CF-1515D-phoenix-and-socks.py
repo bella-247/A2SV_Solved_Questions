@@ -2,6 +2,7 @@
 Title: Phoenix and Socks
 Difficulty: 1500
 Time: 120 min
+Attempts: 5
 URL: https://codeforces.com/contest/1515/problem/D
 
 To satisfy his love of matching socks, Phoenix has brought his $n$ socks ($n$ is even) to the sock store. Each of his socks has a color $c_i$ and is either a left sock or right sock. 
