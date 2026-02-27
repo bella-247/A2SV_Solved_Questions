@@ -38,14 +38,10 @@ for _ in range(int(input())):
     
     players = [0, 0]
     cur_player = 0
- 
+    
     i = 1
     while sum(players) < n:
-        if sum(players) + i <= n:
-            players[cur_player] += i
-        
-        else:
-            players[cur_player] += (n - sum(players))
+        players[cur_player] += min(i, n - sum(players))
             
         cur_player = (cur_player + 1) % 2
         i += 4
