@@ -52,7 +52,10 @@ class Solution:
         diff = [0] * (n + 1)
 
         for left, right, dir in shifts:
+            # if dir == 1 then keeps it 1
+            # if dir == 0 then changes it to -1
             dir = (2 * dir - 1)
+            
             diff[left] += dir
             diff[right + 1] -= dir
 
