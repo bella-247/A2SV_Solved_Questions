@@ -51,13 +51,12 @@ class Solution:
         # after this point we start solving for linked lists with at least 2 elements 
         prev = None
         curr = head
-        next = head.next
 
         while curr:
+            next = curr.next
             curr.next = prev
             prev = curr
             curr = next
-            next = next.next if next else None
 
         return prev
 
