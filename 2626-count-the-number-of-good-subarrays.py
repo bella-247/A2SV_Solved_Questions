@@ -2,6 +2,7 @@
 Title: Count the Number of Good Subarrays
 Difficulty: Medium
 Time: 25 min
+Attempts: 1
 URL: https://leetcode.com/problems/count-the-number-of-good-subarrays/?envType=problem-list-v2&envId=sliding-window
 
 Given an integer array nums and an integer k, return the number of good subarrays of nums.
