@@ -4,18 +4,22 @@ import sys
 input = sys.stdin.readline
 
 def solution():
-    n, k = list(map(int, input().split()))
+    n, k = map(int, input().split())
     nums = list(map(int, input().split()))
-    
-    count = 0
+    nums.sort()
+    win_max = 0
+    longest = 0
     window = Counter()
-    
     left = 0
-    
     for right in range(n):
+        if nums[right] > win_max + 1:
+            window = Counter()
+            left = right
+            
+        win_max = max(win_max, nums[right])
         window[nums[right]] += 1
         
-        while len(window) > k:
+        while left <= right and len(window) > k:
             window[nums[left]] -= 1
             
             if window[nums[left]] == 0:
@@ -23,14 +27,11 @@ def solution():
                 
             left += 1
             
-        count += (right - left + 1)
-        
-    print(count)
-    return
-    
-    
+        longest = max(longest, right - left + 1)
+
+    print(longest)
 
 t = 1
-# t = int(input().strip())
+t = int(input().strip())
 for _ in range(t):
     solution()

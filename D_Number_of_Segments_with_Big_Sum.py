@@ -1,4 +1,7 @@
-def solution():
+import sys
+input = sys.stdin.readline
+
+def solve():
     n, s = map(int, input().split())
     nums = list(map(int, input().split()))
 
@@ -7,36 +10,17 @@ def solution():
     window = 0
     left = 0
     for right in range(n):
-        while left <= right and window < s:
-            pass
+        window += nums[right]
         
-    return count
+        while left <= right and window >= s:
+            count += (n - right)
+            window -= nums[left]
+            left += 1
+            
+    print(count)
+    return
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-for _ in range(int(input())):
-    result = solution()
-    if isinstance(result, bool):
-       print('YES' if result else 'NO')
-    elif isinstance(result, list):
-       print(*result)
-    elif isinstance(result, tuple):
-       print(*result)
-    else:
-       print(result)
+t = 1
+# t = int(input())
+for _ in range(t):
+    solve()
