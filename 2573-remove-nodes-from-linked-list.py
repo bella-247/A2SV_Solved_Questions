@@ -2,7 +2,7 @@
 Title: Remove Nodes From Linked List
 Difficulty: Medium
 Time: 30 min
-URL: https://leetcode.com/problems/remove-nodes-from-linked-list/submissions/1951553739/
+URL: https://leetcode.com/problems/remove-nodes-from-linked-list/
 
 You are given the head of a linked list.
 
@@ -58,7 +58,30 @@ class Solution:
         return helper(head)
 
 
+# # Definition for singly-linked list.
+# # class ListNode:
+# #     def __init__(self, val=0, next=None):
+# #         self.val = val
+# #         self.next = next
+# class Solution:
+#     def removeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
+#         stack = []
 
+#         itr = head
+#         while itr:
+#             while stack and stack[-1].val < itr.val:
+#                 stack.pop()
+
+#             stack.append(itr)
+
+#             itr = itr.next
+
+#         for i in range(len(stack) - 1):
+#             stack[i].next = stack[i + 1]
+            
+#         stack[-1].next = None
+
+#         return stack[0]
 
 
 # # Definition for singly-linked list.
