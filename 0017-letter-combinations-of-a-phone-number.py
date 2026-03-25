@@ -36,25 +36,19 @@ class Solution:
         alphabets = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wyxz"]
         results = []
         
-        def dfs(index, arr):
+        def dfs(arr):
             if len(arr) == len(digits):
                 results.append("".join(arr))
                 return
+            
+            index = len(arr)
+            number = int(digits[index])
 
-            digits_index = len(arr)
-            number = int(digits[digits_index])
-            letters = alphabets[number]
+            for letter in alphabets[number]:
+                arr.append(letter)
+                dfs(arr)
+                arr.pop()
 
-            if index >= len(letters):
-                return
-
-            dfs(index + 1, arr)
-            arr.append(letters[len(letters) - index - 1])
-            dfs(0, arr)
-
-            # backtracking
-            arr.pop()
-
-        dfs(0, [])
+        dfs([])
 
         return results
