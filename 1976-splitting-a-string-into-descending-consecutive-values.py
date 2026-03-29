@@ -1,8 +1,9 @@
 """
 Title: Splitting a String Into Descending Consecutive Values
 Difficulty: Medium
-Time: 60 min
-URL: https://leetcode.com/problems/splitting-a-string-into-descending-consecutive-values/
+Time: 45 min
+Attempts: 3
+URL: https://leetcode.com/problems/splitting-a-string-into-descending-consecutive-values/?envType=problem-list-v2&envId=backtracking
 
 You are given a string s that consists of only digits.
 
