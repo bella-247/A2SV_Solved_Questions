@@ -1,0 +1,78 @@
+from collections import defaultdict, deque, Counter
+import math, sys, bisect, itertools
+
+# sys.setrecursionlimit(10**7)
+input = sys.stdin.readline
+def print(*args, **kwargs):
+    sys.stdout.write(" ".join(map(str, args)) + kwargs.get("end", "\n"))
+
+def read_int(): return int(input().strip())
+def read_ints(): return map(int, input().split())
+def read_list(): return list(map(int, input().split()))
+def yn(res): print("YES" if res else "NO")
+
+inf = float('inf')
+MOD = 10**9 + 7
+def solution(_):
+    n = read_int()
+    nums = read_list()
+    m = read_int()
+    sorted_nums = sorted(nums)
+
+    prefix = [0] * (n + 1)
+    
+    for i in range(n):
+        prefix[i+1] = prefix[i] + nums[i]
+        
+    sorted_prefix = [0] * (n + 1)
+    for i in range(n):
+        sorted_prefix[i+1] = sorted_prefix[i] + sorted_nums[i]
+
+    for i in range(m):
+        t, l, r = read_ints()
+
+        if t == 1:
+            print(prefix[r] - prefix[l-1])
+            
+        else:
+            print(sorted_prefix[r] - sorted_prefix[l-1])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def main():
+    t = 1
+    # t = int(read_int())
+    for _ in range(t):
+        solution(_)
+
+if __name__ == "__main__":
+    main()

@@ -16,57 +16,62 @@ def yn(res): print("YES" if res else "NO")
 inf = float('inf')
 MOD = 10**9 + 7
 
-def minSubK(nums, start, k):
-    result = [-1, -1]
-    left = start
-    n = len(nums)
-    window = 0
-    for right in range(start, n):
-        window += nums[right]
-        while window >= k:
-            result[:] = [left, right]
-            
-            window -= nums[left]
-            left += 1 
-            
-            if window - nums[left] < k:
-                return result
-        
-    return result
-        
 
-def solution():
+def solution(_):
     n, m, v = read_ints()
     nums = read_list()
+    prefix = list(itertools.accumulate(nums))
+    prefix.append(0)
     
-    ranges = []
+    ending_positions = [-1]
+    starting_positions = []
     
-    start = -1
-    for _ in range(m):
-        result = minSubK(nums, start+1, v)
-        if result[0] == -1:
-            print(-1)
-            return
+    cur_sum = 0
+    for i in range(n):
+        cur_sum += nums[i]
         
-        ranges.append(result)
-        start = result[1]
-
-
+        if cur_sum >= v:
+            ending_positions.append(i)
+            cur_sum = 0
+            
+        if len(starting_positions) == m:
+            break
+        
+    cur_sum = 0
+    for i in range(n-1, -1, -1):
+        cur_sum += nums[i]
+        
+        if cur_sum >= v:
+            starting_positions.append(i)
+            cur_sum = 0
+            
+        if len(starting_positions) == m:
+            break
+        
+    starting_positions.reverse()
+    starting_positions.append(n)
+    
+    if len(ending_positions) < m  + 1:
+        print(-1)
+        return
+    
     maxx = 0
-    start = -1
-    for left, right in ranges:
-        maxx = max(maxx, sum(nums[start+1:left]))
-        start = right
-        
-    maxx = max(maxx, sum(nums[ranges[-1][1]:]))
     
+    for i in range(m + 1):
+        alice_start = ending_positions[i] + 1
+        alice_end = starting_positions[i]
+        
+        cur_sum = prefix[alice_end-1] - prefix[alice_start-1]
+        maxx = max(cur_sum, maxx)
+        
     print(maxx)
+    
 
 def main():
     t = 1
     t = int(read_int())
     for _ in range(t):
-        solution()
+        solution(_)
 
 if __name__ == "__main__":
     main()

@@ -1,16 +1,11 @@
 s = input()
-vasya = ""
-word = {"h" : 1, "e" : 1, "l" : 2, "o" : 1}
 
-for c in s:
-    if c not in word or word[c] == 0:
-        continue
-    else:
-        vasya += c
-        word[c] -= 1
+word = "hello"
+
+i = 0
+for j in range(len(s)):
+    if i < len(word) and word[i] == s[j]:
+        i += 1
         
-if vasya == "hello":
-    print("YES")
-
-else:
-    print("NO")
+        
+print("YES" if i == len(word) else "NO")
