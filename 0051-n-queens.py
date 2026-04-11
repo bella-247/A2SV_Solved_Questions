@@ -1,7 +1,7 @@
 """
 Title: N-Queens
 Difficulty: Hard
-Time: 20 min
+Time: 15 min
 URL: https://leetcode.com/problems/n-queens/
 
 The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
