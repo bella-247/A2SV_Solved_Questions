@@ -12,19 +12,21 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
-def solution(_):
-    n, k = read_ints()
-    nums = read_list()
-    
-    if k % 2 == 0:
-        return print(-1)
-    
-    
-    
-        
-    
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 
+def solution(_):
+    n = read_int()
+    
+    health = read_list()
+    power = read_list()
+    
+    prefix = [0] * n
+    
+    
+    
+    
+    
 
 
 
@@ -61,7 +63,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

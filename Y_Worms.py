@@ -12,17 +12,26 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
+    n = read_int()
     nums = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    m = read_int()
+    queries = read_list()
     
-    
-    
+    for i in range(1, n):
+        nums[i] += nums[i - 1]
         
+    for query in queries:
+        print(bisect.bisect_left(nums, query) + 1)
+        
+    
+    
+    
+    
+    
     
 
 

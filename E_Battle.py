@@ -14,15 +14,37 @@ def yn(res): print("YES" if res else "NO")
 inf = float('inf')
 MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
+    n, a, b, k = read_ints()
     nums = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    def calc(health):
+        two = a + b
+        rounds = math.ceil(health / two)
+        health -= (rounds - 1) * two
+        health -= a
+
+        needed_rounds = math.ceil(health / a)
+        return needed_rounds
     
+    nums.sort(key=lambda health: calc(health))
     
-    
+    total = 0
+    for health in nums:
+        taken_rounds = calc(health)
         
+        if taken_rounds <= k:
+            k -= taken_rounds
+            total += 1
+
+    print(total)
+            
+            
+        
+        
+        
+            
+    
+    
     
 
 
@@ -67,3 +89,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

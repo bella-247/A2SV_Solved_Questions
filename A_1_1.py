@@ -12,34 +12,34 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
-
-# Time: O(log(n)) | Space: O(1)
-def iroot(n, k):
-    if n == 0: return 0
-    x = int(n**(1/k)) + 2
-    while x**k > n: x -= 1
-    return x
-
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    k = read_int()
+    n = read_int()
+    nums = list(input().strip())
     
-    def checker(num, k):
-        m = iroot(num, 2)
-        return num - m >= k
-
-    left = k
-    right = k * 2
+    ones = nums.count("1")
+    maximum = ones
     
-    while left <= right:
-        mid = left + (right - left) // 2
+    # maximize
+    left = 0
+    for right in range(2, n):
+        if nums[left] == "1" and nums[right] == "1" and nums[left + 1] == "0":
+            maximum += 1
+            nums[left + 1] = "1"
+        left += 1
         
-        if checker(mid, k):
-            right = mid - 1
-        else:
-            left = mid + 1
+    minimum = maximum
+    
+    left = 0
+    for right in range(2, n):
+        if nums[left] == "1" and nums[right] == "1" and nums[left + 1] == "1":
+            minimum  -= 1
+            nums[left + 1] = "0"
             
-    print(left)        
+        left += 1
+        
+    print(minimum, maximum)
 
 
 

@@ -9,19 +9,26 @@ def print(*args, **kwargs):
 def read_int(): return int(input().strip())
 def read_ints(): return map(int, input().split())
 def read_list(): return list(map(int, input().split()))
-def yn(res): print("YES" if res else "NO")
+def yn(res): print("Yes" if res else "No")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
+    
+    n, k = read_list()
     nums = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    sorted_nums = sorted(nums)
+    mapp = {num : i for i, num in enumerate(sorted_nums)}
     
+    subs = 0
     
+    for i in range(n-1):
+        if mapp[nums[i]] + 1 != mapp[nums[i + 1]]:
+            subs += 1
     
+    yn(subs < k)
         
     
 
@@ -56,12 +63,9 @@ def solution(_):
 
 
 
-
-
-
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

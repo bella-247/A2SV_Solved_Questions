@@ -12,18 +12,15 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
-    nums = read_list()
+    word = input().strip()
     
-    if k % 2 == 0:
-        return print(-1)
-    
-    
-    
-        
-    
+    if len(word) > 10:
+        print(f"{word[0]}{len(word) - 2}{word[-1]}")
+    else:
+        print(word)
 
 
 
@@ -61,7 +58,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

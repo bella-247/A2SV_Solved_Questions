@@ -14,16 +14,25 @@ def yn(res): print("YES" if res else "NO")
 inf = float('inf')
 MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
-    nums = read_list()
+    w, h, n = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    lower = w
+    upper = max(n * h, n * w)
     
+    def checker(side):
+        recs_per_row = side // w
+        rows = math.ceil(n / recs_per_row)
+        return side >= (rows * h)
     
-    
+    while lower <= upper:
+        mid = lower + (upper - lower) // 2
         
-    
+        if checker(mid):
+            upper = mid - 1
+        else:
+            lower = mid + 1
+            
+    print(lower)
 
 
 

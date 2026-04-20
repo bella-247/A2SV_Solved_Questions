@@ -12,18 +12,15 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+MOD = 998244353
 def solution(_):
-    n, k = read_ints()
-    nums = read_list()
+    n, m = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    a = input().strip()
+    b = input().strip()
     
-    
-    
-        
-    
+    a = ""
 
 
 

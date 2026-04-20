@@ -16,13 +16,12 @@ MOD = 10**9 + 7
 def solution(_):
     n, k = read_ints()
     nums = read_list()
+    nums.sort()
+    queries = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    for target in queries:
+        print(bisect.bisect_left(nums, target) + 1)
     
-    
-    
-        
     
 
 

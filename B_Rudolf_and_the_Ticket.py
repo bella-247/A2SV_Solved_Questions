@@ -14,16 +14,24 @@ def yn(res): print("YES" if res else "NO")
 inf = float('inf')
 MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
-    nums = read_list()
+    n, m, k = read_ints()
     
-    if k % 2 == 0:
-        return print(-1)
+    left = read_list()
+    right = read_list()
     
+    left.sort()
+    right.sort()
     
+    total = 0
     
+    for l in left:
+        need = k - l
+        count = bisect.bisect_right(right, need)
         
-    
+        total += count
+        
+        
+    print(total)
 
 
 
@@ -61,7 +69,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

@@ -13,35 +13,37 @@ def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
 MOD = 10**9 + 7
-
-# Time: O(log(n)) | Space: O(1)
-def iroot(n, k):
-    if n == 0: return 0
-    x = int(n**(1/k)) + 2
-    while x**k > n: x -= 1
-    return x
-
 def solution(_):
-    k = read_int()
+    n, m, h = read_ints()
     
-    def checker(num, k):
-        m = iroot(num, 2)
-        return num - m >= k
-
-    left = k
-    right = k * 2
+    original = read_list()
     
-    while left <= right:
-        mid = left + (right - left) // 2
-        
-        if checker(mid, k):
-            right = mid - 1
-        else:
-            left = mid + 1
+    ops = [read_list() for _ in range(m)]
+    
+    reset = 0
+    
+    nums = [[num, 0] for num in original]
+    
+    
+    for index, k in ops:
+        index -= 1
+        if nums[index][1] < reset:
+            nums[index][0] = original[index]
+            nums[index][1] = reset
             
-    print(left)        
-
-
+        nums[index][0] += k
+        
+        if nums[index][0] > h:
+            nums[index][1] += 1
+            nums[index][0] = original[index]
+            reset += 1
+            
+    
+    for i in range(n):
+        if nums[i][1] < reset:
+            nums[i][0] = original[i]
+            
+    print(*[num for num, rs in nums])
 
 
 

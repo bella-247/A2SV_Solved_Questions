@@ -12,19 +12,36 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
-    nums = read_list()
+    n, m = read_ints()
+    D = lambda c: ord(c) - ord("a")
     
-    if k % 2 == 0:
-        return print(-1)
+    s = input().strip()
+    w = input().strip()
     
-    
-    
-        
-    
+    target = sum(D(c) for c in w)
 
+    window = sum(D(c) for c in s[:m])
+    
+    if window == target:
+        return yn(1)
+    
+    left = 0
+    for right in range(m, n):
+        
+        window += D(s[right])
+        window -= D(s[left])
+        left += 1
+
+        if window == target:
+            return yn(1)
+        
+    yn(0)
+        
+        
+        
 
 
 
@@ -61,7 +78,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

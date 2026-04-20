@@ -12,17 +12,37 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
-    nums = read_list()
+    t, h, u = read_ints()
+    total = 0
     
-    if k % 2 == 0:
-        return print(-1)
+    tu = min(t, u)
+    t = t - tu
+    u = u - tu
     
+    total += (tu * 4)
     
+    tht = min(t // 2, h)
+    h = h - tht
+    t = t - (2 * tht)
     
+    total += (tht * 7)
         
+    th = min(t, h)
+    t -= th
+    h -= th
+
+    total += (th * 5)
+    
+    if t > 0:
+        total += (3*t - t + 1)
+    
+    total += (u * 3) + (h * 3)
+    
+    print(total)
+    
     
 
 
@@ -61,7 +81,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

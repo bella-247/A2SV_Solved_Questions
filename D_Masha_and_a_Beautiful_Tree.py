@@ -12,17 +12,42 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
+    n = read_int()
+    
     nums = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    ops = 0
     
-    
-    
+    def mergeSort(arr):
+        nonlocal  ops
         
+        if len(arr) == 1:
+            return arr
+
+        mid = (len(arr) - 1) // 2
+        
+        left = mergeSort(arr[:mid + 1])
+        right = mergeSort(arr[mid + 1: ])
+        
+        if left[0] > right[0]:
+            ops += 1
+            
+            return right + left
+
+        return left + right
+            
+    result = mergeSort(nums)
+    
+    for i in range(n-1):
+        if result[i] > result[i + 1]:
+            return print(-1)
+        
+    
+    print(ops)
+    
     
 
 
@@ -61,7 +86,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

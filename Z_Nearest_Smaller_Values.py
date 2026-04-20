@@ -12,18 +12,28 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
+    n = read_int()
     nums = read_list()
+    nearest = [0] * n
     
-    if k % 2 == 0:
-        return print(-1)
+    stack = []
     
-    
-    
+    for i, num in enumerate(nums):
+        while stack and nums[stack[-1]] >= nums[i]:
+            stack.pop()
+            
+        if stack:
+            nearest[i] = stack[-1] + 1
         
+        stack.append(i)
+            
+            
+    print(*nearest)
     
+     
 
 
 

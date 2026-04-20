@@ -12,18 +12,26 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
+    
+    n = read_int()
     nums = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    count = 0
     
-    
-    
+    for i in range(n-1):
+        maxx = (max(nums[i], nums[i + 1]) + 1) // 2
+        minn = min(nums[i], nums[i + 1])
         
+        while maxx > minn:
+            count += 1
+            maxx = (maxx + 1) // 2
+            
+            
     
+    print(count)
 
 
 
@@ -61,7 +69,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

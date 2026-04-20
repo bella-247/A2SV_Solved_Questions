@@ -12,22 +12,27 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
     n, k = read_ints()
-    nums = read_list()
+    limits = read_list()
+    levels = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    indexed_levels = [[level, i] for i, level in enumerate(levels)]
+    indexed_levels.sort(reverse=True)
     
+    ops = []
     
-    
+    for level, index in indexed_levels:
+        ops.extend([index + 1] * (k + 1 - level))
+
+        if len(ops) > 1000:
+            return print(-1)
+
+    print(len(ops))
+    print(*ops)
         
-    
-
-
-
-
 
 
 
@@ -61,7 +66,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

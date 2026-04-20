@@ -12,18 +12,28 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
+    n, q = read_ints()
     nums = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    total = sum(nums)
+    
+    prefix = list(itertools.accumulate(nums))
+    prefix.append(0)
     
     
-    
+    for _ in range(q):
+        l, r, k = read_ints()
+        l -= 1
+        r -= 1
         
-    
+        result = total - (prefix[r] - prefix[l - 1])
+        result += (k * (r - l + 1))
+        
+        yn(result % 2 != 0)
+        
 
 
 
@@ -61,7 +71,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

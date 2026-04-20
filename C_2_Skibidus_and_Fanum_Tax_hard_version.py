@@ -12,26 +12,50 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+iinf = 10 ** 18
+# MOD = 10**9 + 7
+
 def solution(_):
     n, m = read_ints()
     nums = read_list()
+    nums.append(iinf)
+    
     usables = read_list()
-    b = usables[0]
+    usables.sort()
+    
+    def search(value, limit):
+        left = 0
+        right = m - 1
+        
+        while left <= right:
+            mid = left + (right - left) // 2
+            
+            if usables[mid] - value > limit:
+                right = mid - 1
+            else:
+                left = mid + 1
+                
+        return usables[right] - value
+        
+        
     
     for i in range(n - 1, -1, -1):
-        minn = min(nums[i], b - nums[i])
-        maxx = max(nums[i], b - nums[i])
+        value = nums[i]
+        search_result = search(value, nums[i + 1])
         
-        if i < n - 1 and minn > nums[i + 1]:
+        minn = min(value, search_result)
+        maxx = max(value, search_result)
+        
+        if minn > nums[i + 1]:
             return yn(0)
         
-        if i < n - 1 and maxx > nums[i + 1]:
-            nums[i] = minn
-            
-        else:
+        if maxx <= nums[i + 1]:
             nums[i] = maxx
             
+        else:
+            nums[i] = minn
+    
+    
     yn(1)
 
 

@@ -14,16 +14,24 @@ def yn(res): print("YES" if res else "NO")
 inf = float('inf')
 MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
+    n, m = read_ints()
+    
     nums = read_list()
     
-    if k % 2 == 0:
-        return print(-1)
+    nums.sort()
     
+    total = 0
     
-    
+    for i in range(n - 1, -1, -1):
+        if m == 0:
+            break
         
-    
+        num = nums[i]
+        
+        total += (num  * m)
+        m -= 1
+        
+    print(total)
 
 
 
@@ -61,7 +69,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 

@@ -12,18 +12,35 @@ def read_list(): return list(map(int, input().split()))
 def yn(res): print("YES" if res else "NO")
 
 inf = float('inf')
-MOD = 10**9 + 7
+# iinf = 10 ** 18 + 1
+# MOD = 10**9 + 7
 def solution(_):
-    n, k = read_ints()
-    nums = read_list()
+    s = input().strip()
+    n = len(s)
     
-    if k % 2 == 0:
-        return print(-1)
+    prefix = [0] * (n + 1)
+    mapp = defaultdict(int)
     
-    
-    
+    for i in range(n):
+        prefix[i] = prefix[i - 1] + (1 if s[i] == "-" else -1)
+        init = prefix[i] - 1
         
+        if init not in mapp:
+            mapp[init] = i + 1
+
+    number = max(prefix)
+    mapp[number] = n    
+
+    total = 0
     
+    for i in range(number + 1):
+        total += mapp[i] 
+    
+    print(total)
+
+            
+        
+        
 
 
 
@@ -61,7 +78,7 @@ def solution(_):
 
 def main():
     t = 1
-    # t = int(read_int())
+    t = int(read_int())
     for _ in range(t):
         solution(_)
 
