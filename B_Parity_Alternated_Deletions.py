@@ -41,42 +41,39 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
-def solution(_):
-    n, h, k = rls()
-    a = rls()
-    
-    total_sum = sum(a)
-    max_val = max(a)
-    max_idx = a.index(max_val)
-    
-    # We only care about two configurations:
-    # 1. Original
-    # 2. Swap max_val to the first position (a[0])
-    
-    def get_min_time(arr):
-        S = sum(arr)
-        pref = 0
-        min_t = float('inf')
-        for i in range(n):
-            pref += arr[i]
-            # m * S + pref >= h  => m * S >= h - pref
-            m = max(0, math.ceil((h - pref) / S))
-            time = m * (n + k) + (i + 1)
-            min_t = min(min_t, time)
-        return min_t
 
-    # Option 1: No swap
-    ans = get_min_time(a)
-    
-    # Option 2: Swap max to front
-    a[0], a[max_idx] = a[max_idx], a[0]
-    ans = min(ans, get_min_time(a))
-    
-    print(ans)
+def solution(_):
+    n = ri()
+    nums = rls()
+    nums.sort(reverse=True)
+    total = sum(nums)
+
+    groups = {0: [], 1: []}
+
+    summ = 0
+
+    for num in nums:
+        groups[num % 2].append(num)
+
+    i = 0
+    j = 0
+
+    end = min(len(groups[0]), len(groups[1]))
+
+    summ = sum(groups[0][:end]) + sum(groups[1][:end])
+
+    if end < len(groups[0]):
+        summ += groups[0][end]
+
+    if end < len(groups[1]):
+        summ += groups[1][end]
+
+    print(total - summ)
+
 
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

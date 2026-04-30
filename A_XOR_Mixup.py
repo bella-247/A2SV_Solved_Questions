@@ -40,54 +40,27 @@ def xor(x):
 
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
-def compute_all(arr, m, eaten, total):
-    for i in arr:
-        if len(eaten) >= m:
-            break
-        
-        total += arr[i]
-        
-    return total
+
 
 def solution(_):
-    n, m, k = rls()
-    satisfactions = rls()
-    so_sat = sorted(satisfactions, reverse=True)
+    n = ri()
+    nums = rls()
 
-    adj = [defaultdict(int) for _ in range(n + 1)]
-    visited = [False] * (n + 1)
-
-    for _ in range(k):
-        x, y, s = rls()
-        adj[x][y] = s
-
-    eaten = set()
-
-    def dfs(vertex):
-        if len(eaten) == m:
-            return satisfactions[vertex]
-
-        largest = 0
-
-        for nei, sat in adj[vertex]:
-            if nei in eaten:
+    for i in range(n):
+        res = 0
+        for j in range(n):
+            if j == i:
                 continue
 
-            eaten.add(nei)
-            res, foods = dfs(nei)
-            largest = max(largest, res + sat)
-            eaten.remove(nei)
+            res ^= nums[j]
 
-        return satisfactions[vertex] + largest
-
-    largest = 0
-    for i in range(1, n + 1):
-        dfs(0, 0)
+        if res == nums[i]:
+            return print(nums[i])
 
 
 def main():
     t = 1
-    # t = ri()
+    t = ri()
     for _ in range(t):
         solution(_)
 

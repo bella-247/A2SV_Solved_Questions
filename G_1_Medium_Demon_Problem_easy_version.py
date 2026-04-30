@@ -25,7 +25,7 @@ def rls(spliter=" "):
 
 
 def yn(res):
-    print("Yes" if res else "No")
+    print("YES" if res else "NO")
 
 
 def acc(arr):
@@ -41,38 +41,39 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
-def solution(_):
-    n, h, k = rls()
-    a = rls()
-    
-    total_sum = sum(a)
-    max_val = max(a)
-    max_idx = a.index(max_val)
-    
-    # We only care about two configurations:
-    # 1. Original
-    # 2. Swap max_val to the first position (a[0])
-    
-    def get_min_time(arr):
-        S = sum(arr)
-        pref = 0
-        min_t = float('inf')
-        for i in range(n):
-            pref += arr[i]
-            # m * S + pref >= h  => m * S >= h - pref
-            m = max(0, math.ceil((h - pref) / S))
-            time = m * (n + k) + (i + 1)
-            min_t = min(min_t, time)
-        return min_t
 
-    # Option 1: No swap
-    ans = get_min_time(a)
+def solution(_):
+    n = ri()
+    nums = rls()
+
+    adj = [[] for _ in range(n + 1)]
+    indeg = [0] * (n + 1)
     
-    # Option 2: Swap max to front
-    a[0], a[max_idx] = a[max_idx], a[0]
-    ans = min(ans, get_min_time(a))
+    for i in range(1, n + 1):
+        adj[i].append(nums[i - 1])
+        indeg[nums[i - 1]] += 1
+
+    q = deque()
+
+    for i in range(1, n + 1):
+        if indeg[i] == 0:
+            q.append(i)
+
+    year = 2
     
-    print(ans)
+    while q:
+        year += 1
+        
+        for _ in range(len(q)):
+            v = q.popleft()
+
+            for nei in adj[v]:
+                indeg[nei] -= 1
+                if indeg[nei] == 0:
+                    q.append(nei)
+
+    print(year)
+
 
 def main():
     t = 1

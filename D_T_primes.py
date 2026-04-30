@@ -40,49 +40,29 @@ def xor(x):
 
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
-def compute_all(arr, m, eaten, total):
-    for i in arr:
-        if len(eaten) >= m:
-            break
-        
-        total += arr[i]
-        
-    return total
+
+
+# Time: O(N log log N) | Space: O(N)
+def get_is_prime(n):
+    is_prime = bytearray([1]) * (n + 1)
+    is_prime[0] = is_prime[1] = 0
+    for i in range(2, isqrt(n) + 1):
+        if is_prime[i]:
+            is_prime[i * i : n + 1 : i] = bytearray((n - i * i) // i + 1)
+    return is_prime
+
+
+is_prime = get_is_prime(10**6 + 10)
+
 
 def solution(_):
-    n, m, k = rls()
-    satisfactions = rls()
-    so_sat = sorted(satisfactions, reverse=True)
+    n = ri()
 
-    adj = [defaultdict(int) for _ in range(n + 1)]
-    visited = [False] * (n + 1)
+    nums = rls()
 
-    for _ in range(k):
-        x, y, s = rls()
-        adj[x][y] = s
-
-    eaten = set()
-
-    def dfs(vertex):
-        if len(eaten) == m:
-            return satisfactions[vertex]
-
-        largest = 0
-
-        for nei, sat in adj[vertex]:
-            if nei in eaten:
-                continue
-
-            eaten.add(nei)
-            res, foods = dfs(nei)
-            largest = max(largest, res + sat)
-            eaten.remove(nei)
-
-        return satisfactions[vertex] + largest
-
-    largest = 0
-    for i in range(1, n + 1):
-        dfs(0, 0)
+    for num in nums:
+        root = isqrt(num)
+        yn(root * root == num and is_prime[root])
 
 
 def main():

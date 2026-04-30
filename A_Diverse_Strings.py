@@ -41,38 +41,27 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
-def solution(_):
-    n, h, k = rls()
-    a = rls()
-    
-    total_sum = sum(a)
-    max_val = max(a)
-    max_idx = a.index(max_val)
-    
-    # We only care about two configurations:
-    # 1. Original
-    # 2. Swap max_val to the first position (a[0])
-    
-    def get_min_time(arr):
-        S = sum(arr)
-        pref = 0
-        min_t = float('inf')
-        for i in range(n):
-            pref += arr[i]
-            # m * S + pref >= h  => m * S >= h - pref
-            m = max(0, math.ceil((h - pref) / S))
-            time = m * (n + k) + (i + 1)
-            min_t = min(min_t, time)
-        return min_t
+al = "abcdefghijklmnopqrstuvwxyz"
 
-    # Option 1: No swap
-    ans = get_min_time(a)
-    
-    # Option 2: Swap max to front
-    a[0], a[max_idx] = a[max_idx], a[0]
-    ans = min(ans, get_min_time(a))
-    
-    print(ans)
+
+def solution(_):
+    s = rs()
+    sett = set(s)
+
+    if len(s) != len(sett):
+        return yn(0)
+
+    so = sorted(s)
+    i = al.find(so[0])
+
+    for c in so:
+        if al[i] != c:
+            return yn(0)
+
+        i += 1
+
+    yn(1)
+
 
 def main():
     t = 1
