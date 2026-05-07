@@ -34,16 +34,13 @@ def solution(_):
     n = read_int()
     nums = read_list()
 
-    longest = 1
+    state = [1] * n
 
-    left = 0
-    for right in range(1, n):
-        if nums[right] < nums[right - 1]:
-            left = right
+    for i in range(1, n):
+        if nums[i] >= nums[i - 1]:
+            state[i] = state[i - 1] + 1
 
-        longest = max(longest, right - left + 1)
-
-    print(longest)
+    print(max(state))
 
 
 def main():

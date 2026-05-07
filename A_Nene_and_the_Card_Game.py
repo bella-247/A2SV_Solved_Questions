@@ -25,7 +25,7 @@ def rls(spliter=" "):
 
 
 def yn(res):
-    print("Yes" if res else "No")
+    print("YES" if res else "NO")
 
 
 def acc(arr):
@@ -43,38 +43,12 @@ def xor(x):
 
 
 def solution(_):
-    n, h, k = rls()
-    nums = rls()
+    n = ri()
+    me = rls()
 
-    total = sum(nums)
-    reloads = (h - 1) // total
+    counts = Counter(me)
 
-    seconds = reloads * (n + k)
-    target = h % total
-
-    if target == 0:
-        return print(seconds + n)
-
-    # Prefix
-    prefix_min = [nums[0]]
-
-    for i in range(1, n):
-        prefix_min.append(min(prefix_min[-1], nums[i]))
-
-    # Suffix
-    suffix_max = [0] * (n + 1)
-
-    for i in range(n - 1, -1, -1):
-        suffix_max[i] = max(suffix_max[i + 1], nums[i])
-
-    prefix = 0
-
-    for i in range(n):
-        seconds += 1
-        prefix += nums[i]
-
-        if prefix - prefix_min[i] + suffix_max[i] >= target:
-            return print(seconds)
+    print(sum(1 for count in counts.values() if count == 2))
 
 
 def main():

@@ -25,7 +25,7 @@ def rls(spliter=" "):
 
 
 def yn(res):
-    print("Yes" if res else "No")
+    print("YES" if res else "NO")
 
 
 def acc(arr):
@@ -42,39 +42,31 @@ def xor(x):
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 
-def solution(_):
-    n, h, k = rls()
-    nums = rls()
+def nextSmallerorEqual(arr):
+    n = len(arr)
 
-    total = sum(nums)
-    reloads = (h - 1) // total
+    stack = []
 
-    seconds = reloads * (n + k)
-    target = h % total
-
-    if target == 0:
-        return print(seconds + n)
-
-    # Prefix
-    prefix_min = [nums[0]]
-
-    for i in range(1, n):
-        prefix_min.append(min(prefix_min[-1], nums[i]))
-
-    # Suffix
-    suffix_max = [0] * (n + 1)
-
-    for i in range(n - 1, -1, -1):
-        suffix_max[i] = max(suffix_max[i + 1], nums[i])
-
-    prefix = 0
+    greater = [n] * n
 
     for i in range(n):
-        seconds += 1
-        prefix += nums[i]
+        while stack and arr[stack[-1]] < arr[i]:
+            index = stack.pop()
+            greater[index] = i
 
-        if prefix - prefix_min[i] + suffix_max[i] >= target:
-            return print(seconds)
+        stack.append(i)
+
+    return greater
+
+
+def solution(_):
+    n = ri()
+    nums = rls()
+
+    # next greater
+    greater = nextGreaterorEqual(nums)
+
+    print(greater)
 
 
 def main():

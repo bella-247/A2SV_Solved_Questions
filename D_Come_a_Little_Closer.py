@@ -21,12 +21,29 @@ def xor(x): return x ^ rand
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 def solution(_):
+    n = ri()
+    cords = [rls() for _ in range(n)]
+    
+    if n <= 2:
+        return print(n ** 2)
+    
+    col_sorted = sorted(cords, key= lambda x : x[1])
+    row_sorted = sorted(cords, key= lambda x : x[0])
+    
+    top_most = []
+    bottom_most = []
+    left_most = []
+    right_most = []
+    
+    
+    
+    
     
 
 
 def main():
     t = 1
-    # t = ri()
+    t = ri()
     for _ in range(t):
         solution(_)
 

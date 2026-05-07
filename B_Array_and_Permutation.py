@@ -21,14 +21,19 @@ def solution(_):
     perms = read_list()
     nums = read_list()
     
-    indices = {perm : i for i, perm in enumerate(perms)}
+    indices = [-1] * (n + 1)
     
-    for i in range(1, n):
-        if indices[nums[i]] < indices[nums[i - 1]]:
-            print("NO")
-            return
+    for i, num in enumerate(perms):
+        indices[num] = i
         
-    print("YES")
+    for i in range(n-1):
+        if indices[nums[i]] > indices[nums[i + 1]]:
+            return yn(0)
+        
+    yn(1)
+        
+    
+        
 
 
 

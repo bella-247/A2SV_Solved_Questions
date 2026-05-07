@@ -21,8 +21,17 @@ def xor(x): return x ^ rand
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 def solution(_):
-    
 
+    one = rs()
+    two = rs()
+    n = len(one)
+    
+    result = []
+    
+    for i in range(n):
+        result.append("1" if one[i] != two[i] else "0")
+        
+    print("".join(result))
 
 def main():
     t = 1

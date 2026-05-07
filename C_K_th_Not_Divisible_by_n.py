@@ -1,82 +1,74 @@
-from collections import defaultdict, deque, Counter
-import math, sys, bisect, itertools
+import random, math, sys, heapq as heap
+from itertools import accumulate
+from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
+from collections import Counter, defaultdict, deque
+from bisect import bisect_left, bisect_right
+from random import randint
 
-# sys.setrecursionlimit(10**7)
 input = sys.stdin.readline
+
+
 def print(*args, **kwargs):
     sys.stdout.write(" ".join(map(str, args)) + kwargs.get("end", "\n"))
 
-def read_int(): return int(input().strip())
-def read_ints(): return map(int, input().split())
-def read_list(): return list(map(int, input().split()))
-def yn(res): print("YES" if res else "NO")
 
-inf = float('inf')
-# iinf = 10 ** 18 + 1
-# MOD = 10**9 + 7
+def rs():
+    return input().strip()
+
+
+def ri():
+    return int(rs())
+
+
+def rls(spliter=" "):
+    return list(map(int, rs().split(spliter)))
+
+
+def yn(res):
+    print("YES" if res else "NO")
+
+
+def acc(arr):
+    return list(accumulate(arr))
+
+
+rand = random.getrandbits(32)
+
+
+def xor(x):
+    return x ^ rand
+
+
+# sys.setrecursionlimit(200000) # don't forget to use python 3
+
+
 def solution(_):
-    n, k = read_ints()
-    
+    n, k = rls()
+
     def checker(num):
-        return num - num // n >= k
-    
-    left = 0
+        return (num - num // n) >= k
+
+    left = k
     right = n * k
-    
+
     while left <= right:
-        mid = left + (right - left) // 2
-        
-        
+        mid = (left + right) // 2
+
         if checker(mid):
             right = mid - 1
+
         else:
             left = mid + 1
-            
+
     print(left)
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def main():
     t = 1
-    t = int(read_int())
+    t = ri()
     for _ in range(t):
         solution(_)
+
 
 if __name__ == "__main__":
     main()

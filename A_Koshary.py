@@ -21,12 +21,13 @@ def xor(x): return x ^ rand
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 def solution(_):
-    
+    x, y = rls()
 
+    yn(not (x % 2 != 0 and y % 2 != 0))
 
 def main():
     t = 1
-    # t = ri()
+    t = ri()
     for _ in range(t):
         solution(_)
 

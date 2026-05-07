@@ -21,7 +21,14 @@ def xor(x): return x ^ rand
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 def solution(_):
+    s = rs()
     
+    ups = 0
+    
+    for c in s:
+        ups += (1  if c.isupper() else -1)
+        
+    print(s.upper() if ups > 0 else s.lower())
 
 
 def main():

@@ -1,40 +1,73 @@
-def stringRotation(s, n):
-    max_block_size = 0
-    blocks = 0
-    
+import random, math, sys, heapq as heap
+from itertools import accumulate
+from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
+from collections import Counter, defaultdict, deque
+from bisect import bisect_left, bisect_right
+from random import randint
+
+input = sys.stdin.readline
+
+
+def print(*args, **kwargs):
+    sys.stdout.write(" ".join(map(str, args)) + kwargs.get("end", "\n"))
+
+
+def rs():
+    return input().strip()
+
+
+def ri():
+    return int(rs())
+
+
+def rls(spliter=" "):
+    return list(map(int, rs().split(spliter)))
+
+
+def yn(res):
+    print("YES" if res else "NO")
+
+
+def acc(arr):
+    return list(accumulate(arr))
+
+
+rand = random.getrandbits(32)
+
+
+def xor(x):
+    return x ^ rand
+
+
+# sys.setrecursionlimit(200000) # don't forget to use python 3
+
+
+def solution(_):
+    n = ri()
+    s = rs()
+
+    longest = 0
+    blocks = 1
     cur = s[0]
-    i = 0
-    while i < n:
-        count = 0
-        blocks += 1
-        while i < n and s[i] == cur:
-            count += 1
-            i += 1
-            
-        if i != n:
-            cur = s[i]
-            
-        max_block_size = max(max_block_size, count)
     
-    if max_block_size == 1 or s[0] == s[-1]:
-        return blocks
+    left = 0
     
-    if s[0] != s[-1]:
-        return blocks + 1
+    for right in range(1, n):
+        if s[right] != cur:
+            blocks += 1
+            cur = s[right]
+            left = right
+
+        longest = max(longest, right - left + 1)
+
+    print(blocks + (1 if s[0] != s[-1] and longest >= 2 else 0))
+
+def main():
+    t = 1
+    t = ri()
+    for _ in range(t):
+        solution(_)
 
 
-for _ in range(int(input())):
-    n = int(input())
-    s = input()
-    
-    print(stringRotation(s, n))
-    
-    
-
-        
-        
-
-    
-            
-        
-    
+if __name__ == "__main__":
+    main()

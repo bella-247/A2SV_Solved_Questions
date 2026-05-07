@@ -4,6 +4,7 @@ from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
 from collections import Counter, defaultdict, deque
 from bisect import bisect_left, bisect_right
 from random import randint
+from unittest import result
 
 input = sys.stdin.readline
 
@@ -25,7 +26,7 @@ def rls(spliter=" "):
 
 
 def yn(res):
-    print("Yes" if res else "No")
+    print("YES" if res else "NO")
 
 
 def acc(arr):
@@ -43,39 +44,33 @@ def xor(x):
 
 
 def solution(_):
-    n, h, k = rls()
+    n = ri()
     nums = rls()
 
-    total = sum(nums)
-    reloads = (h - 1) // total
-
-    seconds = reloads * (n + k)
-    target = h % total
-
-    if target == 0:
-        return print(seconds + n)
-
-    # Prefix
-    prefix_min = [nums[0]]
-
-    for i in range(1, n):
-        prefix_min.append(min(prefix_min[-1], nums[i]))
-
-    # Suffix
-    suffix_max = [0] * (n + 1)
-
-    for i in range(n - 1, -1, -1):
-        suffix_max[i] = max(suffix_max[i + 1], nums[i])
-
-    prefix = 0
-
+    groups = [[], [], [], []]
+    
     for i in range(n):
-        seconds += 1
-        prefix += nums[i]
+        if nums[i] % 6 == 0:
+            groups[0].append(nums[i])
+            
+        elif nums[i] % 2 == 0:
+            groups[1].append(nums[i])
 
-        if prefix - prefix_min[i] + suffix_max[i] >= target:
-            return print(seconds)
-
+        elif nums[i] % 3 == 0:
+            groups[3].append(nums[i])
+            
+        else:
+            groups[2].append(nums[i])
+            
+            
+    result = []
+    result.extend(groups[0])
+    result.extend(groups[1])
+    result.extend(groups[2])
+    result.extend(groups[3])
+    
+    print(*result)
+    
 
 def main():
     t = 1
