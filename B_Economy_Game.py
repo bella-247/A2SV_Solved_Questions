@@ -4,6 +4,7 @@ from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
 from collections import Counter, defaultdict, deque
 from bisect import bisect_left, bisect_right
 from random import randint
+from heapq import heapify, heappush, heappop
 
 input = sys.stdin.readline
 
@@ -39,30 +40,26 @@ def xor(x):
     return x ^ rand
 
 
-# sys.setrecursionlimit(200000) # don't forget to use python 3
+# sys.setrecursionlimit(10**7)  # don't forget to use python 3
 
 
 def solution(_):
-    n, a, b, c = rls()
+    n = ri()
 
-    state = [0] * (4001)
-    state[a] = state[b] = state[c] = 1
+    a = 1234567
+    b = 123456
+    c = 1234
 
-    for i in range(1, n + 1):
-        maxx = state[i]
+    for i in range(n // a + 1):
+        x = n - (a * i)
 
-        if i - a > 0 and state[i - a] > 0:
-            maxx = max(maxx, state[i - a] + 1)
+        for j in range(x // b + 1):
+            y = x - (b * j)
 
-        if i - b > 0:
-            maxx = max(maxx, state[i - b] + 1)
-        
-        if i - c > 0:
-            maxx = max(maxx, state[i - c] + 1)
+            if y % c == 0:
+                return yn(1)
 
-        state[i] = maxx
-
-    print(state[n])
+    yn(0)
 
 
 def main():

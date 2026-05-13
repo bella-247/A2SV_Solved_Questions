@@ -4,6 +4,7 @@ from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
 from collections import Counter, defaultdict, deque
 from bisect import bisect_left, bisect_right
 from random import randint
+from heapq import heapify, heappush, heappop
 
 input = sys.stdin.readline
 
@@ -43,31 +44,50 @@ def xor(x):
 
 
 def solution(_):
-    n, a, b, c = rls()
+    n, m, sx, sy, d = rls()
 
-    state = [0] * (4001)
-    state[a] = state[b] = state[c] = 1
+    sx -= 1
+    sy -= 1
+    visited = [[False] * m for _ in range(n)]
 
-    for i in range(1, n + 1):
-        maxx = state[i]
+    directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 
-        if i - a > 0 and state[i - a] > 0:
-            maxx = max(maxx, state[i - a] + 1)
+    q = deque([[0, 0]])
+    visited[0][0] = True
+    
+    steps = -1
 
-        if i - b > 0:
-            maxx = max(maxx, state[i - b] + 1)
-        
-        if i - c > 0:
-            maxx = max(maxx, state[i - c] + 1)
+    while q:
+        steps += 1
 
-        state[i] = maxx
+        for _ in range(len(q)):
+            r, c = q.popleft()
 
-    print(state[n])
+            if r == n - 1 and c == m - 1:
+                return print(steps)
+
+            for dr, dc in directions:
+                nr, nc = r + dr, c + dc
+
+                if not (-1 < nr < n and -1 < nc < m):
+                    continue
+
+                if not (abs(nr - sx) + abs(nc - sy) > d):
+                    continue
+
+                if visited[nr][nc]:
+                    continue
+
+                visited[nr][nc] = True
+
+                q.append([nr, nc])
+
+    print(-1)
 
 
 def main():
     t = 1
-    # t = ri()
+    t = ri()
     for _ in range(t):
         solution(_)
 

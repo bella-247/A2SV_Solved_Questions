@@ -4,6 +4,7 @@ from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
 from collections import Counter, defaultdict, deque
 from bisect import bisect_left, bisect_right
 from random import randint
+from heapq import heapify, heappush, heappop
 
 input = sys.stdin.readline
 
@@ -43,26 +44,24 @@ def xor(x):
 
 
 def solution(_):
-    n, a, b, c = rls()
+    r1, c1, r2, c2 = rls()
 
-    state = [0] * (4001)
-    state[a] = state[b] = state[c] = 1
+    rook = 1 if r1 == r2 or c1 == c2 else 2
 
-    for i in range(1, n + 1):
-        maxx = state[i]
+    diff1 = r1 - c1
+    diff2 = r2 - c2
 
-        if i - a > 0 and state[i - a] > 0:
-            maxx = max(maxx, state[i - a] + 1)
+    if diff1 % 2 != diff2 % 2:
+        bishop = 0
 
-        if i - b > 0:
-            maxx = max(maxx, state[i - b] + 1)
-        
-        if i - c > 0:
-            maxx = max(maxx, state[i - c] + 1)
+    else:
+        sum1 = r1 + c1
+        sum2 = r2 + c2
+        bishop = 1 if diff1 == diff2 or sum1 == sum2 else 2
 
-        state[i] = maxx
-
-    print(state[n])
+    king = max(abs(r1- r2), abs(c1 - c2))
+    
+    print(rook, bishop, king)
 
 
 def main():

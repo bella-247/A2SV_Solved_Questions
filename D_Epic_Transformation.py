@@ -4,6 +4,8 @@ from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
 from collections import Counter, defaultdict, deque
 from bisect import bisect_left, bisect_right
 from random import randint
+from heapq import heapify, heappush, heappop
+import heapq
 
 input = sys.stdin.readline
 
@@ -43,31 +45,46 @@ def xor(x):
 
 
 def solution(_):
-    n, a, b, c = rls()
+    n = ri()
+    nums = rls()
+    counts = Counter(nums)
+    heap = [[-freq, num] for num, freq in counts.items()]
+    heapify(heap)
+    print(heap)
 
-    state = [0] * (4001)
-    state[a] = state[b] = state[c] = 1
+    while len(heap) > 1:
 
-    for i in range(1, n + 1):
-        maxx = state[i]
+        for i in range(1, len(heap)):
+            if len(heap) <= 1 or i >= len(heap):
+                break
 
-        if i - a > 0 and state[i - a] > 0:
-            maxx = max(maxx, state[i - a] + 1)
+            freq0 = -heap[0][0]
+            freqi = -heap[i][0]
 
-        if i - b > 0:
-            maxx = max(maxx, state[i - b] + 1)
-        
-        if i - c > 0:
-            maxx = max(maxx, state[i - c] + 1)
+            heap[0][0] = -(freq0 + 1)
+            heap[i][0] = -(freqi + 1)
 
-        state[i] = maxx
+            if heap[i][0] == 0:
+                heap[i], heap[-1] = heap[-1], heap[i]
+                heap.pop()
 
-    print(state[n])
+            if len(heap) >= 1 and heap[0][0] == 0:
+                heap[0], heap[-1] = heap[-1], heap[0]
+                heap.pop()
+
+            # heapify(heap)
+
+        print(heap)
+
+        if len(heap) < 4:
+            break
+
+    print(0 if len(heap) == 0 else -heap[0][0])
 
 
 def main():
     t = 1
-    # t = ri()
+    t = ri()
     for _ in range(t):
         solution(_)
 

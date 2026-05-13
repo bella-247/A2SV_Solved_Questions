@@ -4,6 +4,7 @@ from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
 from collections import Counter, defaultdict, deque
 from bisect import bisect_left, bisect_right
 from random import randint
+from heapq import heapify, heappush, heappop
 
 input = sys.stdin.readline
 
@@ -38,31 +39,36 @@ rand = random.getrandbits(32)
 def xor(x):
     return x ^ rand
 
-
-# sys.setrecursionlimit(200000) # don't forget to use python 3
-
+# sys.setrecursionlimit(200000)  # don't forget to use python 3
 
 def solution(_):
-    n, a, b, c = rls()
+    n, m = rls()
 
-    state = [0] * (4001)
-    state[a] = state[b] = state[c] = 1
+    adj = [[] for _ in range(n + 1)]
+    visited = [False] * (n + 1)
 
-    for i in range(1, n + 1):
-        maxx = state[i]
+    for _ in range(m):
+        u, v = rls()
+        adj[u].append(v)
+        adj[v].append(u)
 
-        if i - a > 0 and state[i - a] > 0:
-            maxx = max(maxx, state[i - a] + 1)
+    def bfs():
+        path = []
+        visited[1] = True
+        heap = [1]
 
-        if i - b > 0:
-            maxx = max(maxx, state[i - b] + 1)
-        
-        if i - c > 0:
-            maxx = max(maxx, state[i - c] + 1)
+        while heap:
+            v = heappop(heap)
+            path.append(v)
 
-        state[i] = maxx
+            for nei in adj[v]:
+                if not visited[nei]:
+                    visited[nei] = True
+                    heappush(heap, nei)
 
-    print(state[n])
+        return path
+
+    print(*bfs())
 
 
 def main():

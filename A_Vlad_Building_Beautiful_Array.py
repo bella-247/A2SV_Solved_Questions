@@ -43,31 +43,32 @@ def xor(x):
 
 
 def solution(_):
-    n, a, b, c = rls()
+    n = ri()
+    nums = rls()
+    nums.sort()
 
-    state = [0] * (4001)
-    state[a] = state[b] = state[c] = 1
+    odds = set()
+    evens = set()
 
-    for i in range(1, n + 1):
-        maxx = state[i]
+    for i in range(n):
+        if nums[i] % 2 == 0:
+            evens.add(nums[i])
 
-        if i - a > 0 and state[i - a] > 0:
-            maxx = max(maxx, state[i - a] + 1)
+        else:
+            odds.add(nums[i])
 
-        if i - b > 0:
-            maxx = max(maxx, state[i - b] + 1)
-        
-        if i - c > 0:
-            maxx = max(maxx, state[i - c] + 1)
+    if len(odds) == 0 or len(evens) == 0:
+        return yn(1)
 
-        state[i] = maxx
+    odd_min = min(odds)
+    even_min = min(evens)
 
-    print(state[n])
+    yn(odd_min < even_min)
 
 
 def main():
     t = 1
-    # t = ri()
+    t = ri()
     for _ in range(t):
         solution(_)
 

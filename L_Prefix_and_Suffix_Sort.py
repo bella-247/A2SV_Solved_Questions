@@ -4,6 +4,7 @@ from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
 from collections import Counter, defaultdict, deque
 from bisect import bisect_left, bisect_right
 from random import randint
+from heapq import heapify, heappush, heappop
 
 input = sys.stdin.readline
 
@@ -43,31 +44,37 @@ def xor(x):
 
 
 def solution(_):
-    n, a, b, c = rls()
+    n = ri()
 
-    state = [0] * (4001)
-    state[a] = state[b] = state[c] = 1
+    nums = rls()
+    indexed = [(num, i) for i, num in enumerate(nums)]
+    sorted_indexed = sorted(indexed)
+    mapp = [-1] * n
 
-    for i in range(1, n + 1):
-        maxx = state[i]
+    for i in range(n):
+        tup = sorted_indexed[i]
+        mapp[tup[1]] = i
 
-        if i - a > 0 and state[i - a] > 0:
-            maxx = max(maxx, state[i - a] + 1)
+    maxx = 0
 
-        if i - b > 0:
-            maxx = max(maxx, state[i - b] + 1)
-        
-        if i - c > 0:
-            maxx = max(maxx, state[i - c] + 1)
+    def close(i):
+        return 0 if i <= n - i - 1 else n - 1
 
-        state[i] = maxx
+    for i in range(n):
+        sorted_index = mapp[i]
+        if i == sorted_index:
+            continue
 
-    print(state[n])
+        diff = abs(i - close(sorted_index))
+
+        maxx = max(maxx, diff + 1)
+
+    print(maxx)
 
 
 def main():
     t = 1
-    # t = ri()
+    t = ri()
     for _ in range(t):
         solution(_)
 
