@@ -1,8 +1,8 @@
 """
 Title: Create Sorted Array through Instructions
 Difficulty: Hard
-Time: 30 min
-URL: https://leetcode.com/problems/create-sorted-array-through-instructions/submissions/1981222290/
+Time: 60 min
+URL: https://leetcode.com/problems/create-sorted-array-through-instructions/
 
 Given an integer array instructions, you are asked to create a sorted array from the elements in instructions. You start with an empty container nums. For each element from left to right in instructions, insert it into nums. The cost of each insertion is the minimum of the following:
 
@@ -81,17 +81,44 @@ class Solution:
             i = 0
             j = 0
 
+            smallers = 0
+
             while i < len(left) and j < len(right):
-                if left[i][0] <= right[j][0]:
+
+                if left[i][0] == right[j][0]:
                     merged.append(left[i])
+                    i += 1
+                
+                elif left[i][0] < right[j][0]:
+                    merged.append(left[i])
+                    smallers += 1
+
                     i += 1
 
                 else:
+                    index = right[j][1]
+                    smaller_greaters[index][0] += smallers
+                    smaller_greaters[index][1] += len(left) - i
+                    
                     merged.append(right[j])
+
+                    if j < len(right) - 1 and right[j + 1][0] > right[j][0]:
+                        smallers = i
+
                     j += 1
 
             merged.extend(left[i:])
-            merged.extend(right[j:])
+
+            while j < len(right):
+                index = right[j][1]
+
+                if right[j][0] > left[-1][0]:
+                    smallers = i
+
+                smaller_greaters[index][0] += smallers
+                
+                merged.append(right[j])
+                j += 1
 
             return merged
 
@@ -102,12 +129,6 @@ class Solution:
             mid = (right + left) // 2
             left = mergeSort(left, mid)
             right = mergeSort(mid + 1, right)
-
-            for num, index in right:
-                smaller = bisect.bisect_left(left, [num, -index])
-                greater = len(left) - bisect.bisect_right(left, [num, index])
-                smaller_greaters[index][0] += smaller
-                smaller_greaters[index][1] += greater
 
             return merge(left, right)
 
