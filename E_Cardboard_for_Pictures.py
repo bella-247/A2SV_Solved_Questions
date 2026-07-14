@@ -43,15 +43,36 @@ def xor(x):
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 
+INF = 10**18
+
 def solution(_):
-    a, b, n = rls()
-
+    n, c = rls()
     nums = rls()
+    
+    summ = sqsumm = 0
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    for i in range(n):
+        summ += nums[i]
+        sqsumm += nums[i] * nums[i]
 
-    print(b + total)
+    c -= sqsumm
 
+    def calc(w):
+        return 4 * w * (n * w + summ)
+
+    left = 1
+    right = c
+
+    while left <= right:
+        mid = left + (right - left) // 2
+
+        if calc(mid) < c:
+            left = mid + 1
+
+        else:
+            right = mid - 1
+            
+    print(left)
 
 def main():
     t = 1

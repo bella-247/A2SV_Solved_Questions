@@ -42,15 +42,33 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
+
 
 def solution(_):
-    a, b, n = rls()
+    n, m, k = rls()
 
     nums = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    for i in range(n - 1):
+        diff = nums[i] - nums[i + 1]
 
-    print(b + total)
+        if diff >= 0:
+            m += diff + k
+
+        else:
+            diff = abs(diff)
+
+            if diff > k:
+                m = m - (diff - k)
+
+                if m < 0:
+                    return yn(0)
+
+            elif diff < k:
+                m += k - diff
+
+    yn(1)
 
 
 def main():

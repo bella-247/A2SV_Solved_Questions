@@ -42,15 +42,46 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
+
+
+def continous(arr):
+    if arr[0] != 0:
+        return False
+
+    for i in range(1, len(arr)):
+        if arr[i] == 0 and arr[i - 1] != 0:
+            return False
+    return True
+
 
 def solution(_):
-    a, b, n = rls()
-
+    n = ri()
     nums = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    count = nums.count(0)
 
-    print(b + total)
+    if count == n:
+        return print(0)
+
+    if count == 0:
+        return print(1)
+
+    left = -1
+    right = n
+
+    for i in range(n):
+        if nums[i] != 0:
+            break
+        
+        left = i
+            
+    for i in range(n - 1, -1, -1):
+        if nums[i] != 0:
+            break
+        right = i
+
+    print(2 if 0 in nums[left + 1 : right] else 1)
 
 
 def main():

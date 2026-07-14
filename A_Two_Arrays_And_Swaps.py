@@ -4,7 +4,7 @@ from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
 from collections import Counter, defaultdict, deque
 from bisect import bisect_left, bisect_right
 from random import randint
-from heapq import heapify, heappush, heappop
+from heapq import heapify, heappush, heappop, heapreplace
 
 input = sys.stdin.readline
 
@@ -44,13 +44,26 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
+    n, k = rls()
 
     nums = rls()
+    heap = rls()
+    heap = [-x for x in heap]
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    heapify(heap)
 
-    print(b + total)
+    nums.sort()
+    i = 0
+    while k > 0 and i < n:
+        if nums[i] > -heap[0]:
+            break
+
+        x = heapreplace(heap, nums[i])
+        nums[i] = x
+        i += 1
+        k -= 1
+
+    print(sum(x if x > 0 else -x for x in nums))
 
 
 def main():

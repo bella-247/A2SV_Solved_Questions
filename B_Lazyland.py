@@ -44,18 +44,33 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
-
+    n, k = rls()
     nums = rls()
+    costs = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    freqs = defaultdict(list)
 
-    print(b + total)
+    for i in range(n):
+        freqs[nums[i]].append((costs[i], i))
+
+    result = []
+    for f in freqs:
+        freqs[f].sort()
+        result.extend(freqs[f][:-1])
+
+    result.sort()
+
+    total = 0
+    
+    for i in range(k - len(freqs)):
+        total += result[i][0]
+
+    print(total)
 
 
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

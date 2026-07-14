@@ -42,15 +42,32 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
+
 
 def solution(_):
-    a, b, n = rls()
+    n = ri()
+    nums = list(map(int, list(rs())))
 
-    nums = rls()
+    ignis = [nums[i] for i in range(0, n, 2)]
+    aqua = [nums[i] for i in range(1, n, 2)]
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    ignis.sort(key=lambda x: x % 2, reverse=True)
+    aqua.sort(key=lambda x: x % 2, reverse=False)
 
-    print(b + total)
+    turn = 0
+    for i in range(n - 1):
+        if turn == 0:
+            ignis.pop()
+
+        else:
+            aqua.pop()
+
+        turn = 1 - turn
+
+    x = ignis.pop() if ignis else aqua.pop()
+    
+    print(1 if x % 2 != 0 else 2)
 
 
 def main():

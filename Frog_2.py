@@ -7,30 +7,67 @@ from random import randint
 from heapq import heapify, heappush, heappop
 
 input = sys.stdin.readline
+
+
 def print(*args, **kwargs):
     sys.stdout.write(" ".join(map(str, args)) + kwargs.get("end", "\n"))
 
-def rs(): return input().strip()
-def ri(): return int(rs())
-def rls(spliter=" "): return list(map(int, rs().split(spliter)))
-def yn(res): print("YES" if res else "NO")
 
-def acc(arr): return list(accumulate(arr))
+def rs():
+    return input().strip()
+
+
+def ri():
+    return int(rs())
+
+
+def rls(spliter=" "):
+    return list(map(int, rs().split(spliter)))
+
+
+def yn(res):
+    print("YES" if res else "NO")
+
+
+def acc(arr):
+    return list(accumulate(arr))
+
+
 rand = random.getrandbits(32)
-def xor(x): return x ^ rand
+
+
+def xor(x):
+    return x ^ rand
+
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
-def solution(_):
-    n, m, a, b = rls()
+INF = 10**18
 
-    yn((n + m) >= (a + b))
-    
+
+def solution(_):
+    n, k = rls()
+    nums = rls()
+    nums.reverse()
+
+    memo = [0] * n
+
+    for i in range(1, n):
+
+        memo[i] = INF
+
+        for prev in range(max(0, i - k), i):
+            memo[i] = min(memo[i], abs(nums[i] - nums[prev]) + memo[prev])
+
+    print(memo[n - 1])
+
+
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
+
 
 if __name__ == "__main__":
     main()

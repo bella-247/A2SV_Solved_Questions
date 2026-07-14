@@ -42,6 +42,10 @@ def solution(_):
     
 
 
+1 2 3 5 0 4 6
+
+
+
 
 def main():
     t = 1

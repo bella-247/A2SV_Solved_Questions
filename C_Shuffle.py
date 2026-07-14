@@ -44,13 +44,21 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
+    n, x, m = rls()
 
-    nums = rls()
+    intervals = [rls() for _ in range(m)]
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    def overlaps(l1, r1, l2, r2):
+        return l1 <= l2 <= r1 or l1 <= r2 <= r1 or l2 <= l1 <= r2 or l2 <= r1 <= r2
 
-    print(b + total)
+    last = [x, x]
+
+    for interval in intervals:
+        if overlaps(*last, *interval):
+            last[0] = min(last[0], interval[0])
+            last[1] = max(last[1], interval[1])
+
+    print(last[1] - last[0] + 1)
 
 
 def main():

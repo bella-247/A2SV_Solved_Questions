@@ -17,15 +17,20 @@ def yn(res): print("YES" if res else "NO")
 
 def acc(arr): return list(accumulate(arr))
 rand = random.getrandbits(32)
-def xor(x): return x ^ rand
+def xor(x): return x ^ rand 
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 def solution(_):
-    n, m, a, b = rls()
-
-    yn((n + m) >= (a + b))
+    n, c, k = rls()
     
+    arr = []
+    for i in range(n):
+        arr.append(((i**2 + c)) % n)
+    print(*arr)
+
+
+
 def main():
     t = 1
     t = ri()

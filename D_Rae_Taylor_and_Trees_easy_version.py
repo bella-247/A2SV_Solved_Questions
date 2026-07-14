@@ -44,13 +44,34 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
-
+    n = ri()
     nums = rls()
-
-    total = sum(min(a - 1, tool) for tool in nums)
-
-    print(b + total)
+    
+    edges = []
+    
+    prefix = [nums[0]]
+    
+    for i in range(1, n):
+        prefix.append(min(nums[i], prefix[-1]))
+    
+    maxx = nums[-1]
+    
+    for i in range(n - 1, 0, -1):
+        maxx = max(maxx, nums[i])
+        
+        if maxx < prefix[i - 1]:
+            return yn(0)
+        
+        if maxx > nums[i - 1]:
+            edges.append([maxx, nums[i - 1]])
+            
+        else:
+            edges.append([maxx, prefix[i - 1]])
+        
+    
+    yn(1)
+    for u, v in edges:
+        print(u, v)
 
 
 def main():

@@ -39,23 +39,44 @@ rand = random.getrandbits(32)
 def xor(x):
     return x ^ rand
 
-
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
-
 def solution(_):
-    a, b, n = rls()
+    n, k, m = rls()
 
-    nums = rls()
+    words = rs().split()
+    costs = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    groups = {}
 
-    print(b + total)
+    group_min = [inf] * k
+
+    for i in range(k):
+        x, *arr = rls()
+
+        for j in range(x):
+            index = arr[j] - 1
+            word = words[index]
+            groups[word] = i
+            group_min[i] = min(group_min[i], costs[index])
+
+
+    # final answer
+
+    total = 0
+
+    used = rs().split()
+
+    for word in used:
+        g = groups[word]
+        total += group_min[g]
+
+    print(total)
 
 
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

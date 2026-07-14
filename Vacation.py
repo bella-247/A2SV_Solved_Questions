@@ -40,22 +40,32 @@ def xor(x):
     return x ^ rand
 
 
-# sys.setrecursionlimit(200000) # don't forget to use python 3
+sys.setrecursionlimit(200000)  # don't forget to use python 3
+
+INF = 10**18
 
 
 def solution(_):
-    a, b, n = rls()
+    n = ri()
+    days = [rls() for _ in range(n)]
 
-    nums = rls()
+    memo = [[0] * 3 for _ in range(n)]
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    for i in range(3):
+        memo[n - 1][i] = days[n - 1][i]
 
-    print(b + total)
+    for i in range(n - 2, -1, -1):
+        next = i + 1
+
+        for j in range(3):
+            memo[i][j] = days[i][j] + max(memo[next][k] for k in range(3) if k != j)
+
+    print(max(memo[0]))
 
 
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

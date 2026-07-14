@@ -44,13 +44,59 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
+    n, m = rls()
 
-    nums = rls()
+    s = rs()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    west = deque()
+    east = deque()
 
-    print(b + total)
+    w = True
+    e = True
+
+    for i in range(n):
+        if s[i] == "[":
+            w = not w
+            continue
+
+        if s[i] == "]":
+            e = not e
+            continue
+
+        if s[i] == "<":
+            if west:
+                west.pop()
+
+            elif east:
+                east.popleft()
+
+            continue
+
+        elif s[i] == ">":
+            if east:
+                east.pop()
+
+            elif west:
+                west.popleft()
+
+            continue
+
+        if len(west) + len(east) == m:
+            continue
+
+        if e:
+            east.append(i)
+
+        elif w:
+            west.append(i)
+    
+    while west:
+        print(s[west.pop()], end="")
+
+    while east:
+        print(s[east.popleft()], end="")
+
+    print()
 
 
 def main():

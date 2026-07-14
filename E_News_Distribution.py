@@ -43,19 +43,56 @@ def xor(x):
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 
+class UnionFind:
+    def __init__(self, n):
+        self.root = list(range(n + 1))
+        self.size = [1] * (n + 1)
+
+    def find(self, x):
+        if self.root[x] != x:
+            self.root[x] = self.find(self.root[x])
+        return self.root[x]
+
+    def union(self, x, y):
+        rx, ry = self.find(x), self.find(y)
+
+        if rx == ry:
+            return False
+
+        if self.size[rx] < self.size[ry]:
+            rx, ry = ry, rx
+
+        self.root[ry] = rx
+        self.size[rx] += self.size[ry]
+
+        return True
+
+    def getSize(self, x):
+        rx = self.find(x)
+        return self.size[rx]
+
+    def connected(self, x, y):
+        return self.find(x) == self.find(y)
+
+
 def solution(_):
-    a, b, n = rls()
 
-    nums = rls()
+    n, m = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    uf = UnionFind(n)
 
-    print(b + total)
+    for _ in range(m):
+        k, *arr = rls()
+
+        for i in range(1, k):
+            uf.union(arr[i], arr[i - 1])
+
+    print(*[uf.getSize(x) for x in range(1, n + 1)])
 
 
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

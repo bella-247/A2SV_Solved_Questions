@@ -22,10 +22,14 @@ def xor(x): return x ^ rand
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 def solution(_):
-    n, m, a, b = rls()
-
-    yn((n + m) >= (a + b))
+    n = ri()
+    x = rs()
+    s = rs()
     
+    for i in range(n - 1):
+        new_s = x[i:]
+
+
 def main():
     t = 1
     t = ri()

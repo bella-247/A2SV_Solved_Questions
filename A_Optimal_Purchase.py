@@ -7,30 +7,64 @@ from random import randint
 from heapq import heapify, heappush, heappop
 
 input = sys.stdin.readline
+
+
 def print(*args, **kwargs):
     sys.stdout.write(" ".join(map(str, args)) + kwargs.get("end", "\n"))
 
-def rs(): return input().strip()
-def ri(): return int(rs())
-def rls(spliter=" "): return list(map(int, rs().split(spliter)))
-def yn(res): print("YES" if res else "NO")
 
-def acc(arr): return list(accumulate(arr))
+def rs():
+    return input().strip()
+
+
+def ri():
+    return int(rs())
+
+
+def rls(spliter=" "):
+    return list(map(int, rs().split(spliter)))
+
+
+def yn(res):
+    print("YES" if res else "NO")
+
+
+def acc(arr):
+    return list(accumulate(arr))
+
+
 rand = random.getrandbits(32)
-def xor(x): return x ^ rand
+
+
+def xor(x):
+    return x ^ rand
+
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
-def solution(_):
-    n, m, a, b = rls()
+INF = 10**18
 
-    yn((n + m) >= (a + b))
+
+def solution(_):
+    n, a, b = rls()
+
+    if b > 3 * a:
+        return print(n * a)
+
+    group = n // 3
+
+    cost = group * b
+    rest = n - group * 3
     
+    print(cost + min(rest * a, b))
+
+
 def main():
     t = 1
     t = ri()
     for _ in range(t):
         solution(_)
+
 
 if __name__ == "__main__":
     main()

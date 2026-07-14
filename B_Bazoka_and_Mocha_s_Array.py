@@ -43,14 +43,37 @@ def xor(x):
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 
+def isSorted(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        if arr[i] > arr[i + 1]:
+            return False
+
+    return True
+
+
+INF = 10**18
+
+
 def solution(_):
-    a, b, n = rls()
-
+    n = ri()
     nums = rls()
+    n = len(nums)
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    index = -1
 
-    print(b + total)
+    for i in range(n - 1):
+        if nums[i] > nums[i + 1]:
+            index = i
+            break
+
+    prefix = nums[: index + 1]
+    suffix = nums[index + 1 :]
+
+    if not prefix or (isSorted(suffix) and prefix[0] >= suffix[-1]):
+        return yn(1)
+
+    yn(0)
 
 
 def main():

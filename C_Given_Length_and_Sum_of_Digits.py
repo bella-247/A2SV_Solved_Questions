@@ -1,3 +1,4 @@
+import string
 import random, math, sys, heapq as heap
 from itertools import accumulate
 from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
@@ -17,18 +18,54 @@ def yn(res): print("YES" if res else "NO")
 
 def acc(arr): return list(accumulate(arr))
 rand = random.getrandbits(32)
-def xor(x): return x ^ rand
+def xor(x): return x ^ rand 
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
-def solution(_):
-    n, m, a, b = rls()
+def stringify(arr):
+    return "".join(map(str, arr))
 
-    yn((n + m) >= (a + b))
+
+def solution(_):
+    m, s = rls()
+    
+    digits = [9] * m
+    
+    maxx = 9 * m
+    
+    if s > maxx:
+        return print(-1, -1)
+    
+    if s == 0 and m > 1:
+        return print(-1, -1)
+    
+
+    
+    maximum = stringify(digits)
+    
+    s -= 1
+    
+    digits = [0] * m
+    
+    i = 0
+    while s > 0:
+        if s > 9:
+            digits[i] = 9
+            
+        else:
+            digits[i] = s
+            
+        i += 1
+    
+    digits[-1] += 1
+    
+    minimum = stringify(digits)
+    print(minimum, maximum)
+    
     
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

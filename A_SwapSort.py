@@ -44,18 +44,34 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
+    n = ri()
 
     nums = rls()
+    sorted_nums = sorted(nums)
 
-    total = sum(min(a - 1, tool) for tool in nums)
-
-    print(b + total)
-
+    indices = defaultdict(set)
+    
+    for i in range(n):
+        indices[sorted_nums[i]].add(i)
+    
+    swaps = []
+    
+    for i in range(n):
+        while i not in indices[nums[i]]:
+            for index in indices[nums[i]]:
+                if nums[index] != sorted_nums[index]:
+                    swaps.append([i, index])
+                    nums[i], nums[index] = nums[index], nums[i]
+                    break
+    
+    print(len(swaps))
+    
+    for swap in swaps:
+        print(*swap)
 
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

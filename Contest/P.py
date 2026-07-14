@@ -17,14 +17,26 @@ def yn(res): print("YES" if res else "NO")
 
 def acc(arr): return list(accumulate(arr))
 rand = random.getrandbits(32)
-def xor(x): return x ^ rand
+def xor(x): return x ^ rand 
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 def solution(_):
-    n, m, a, b = rls()
+    n, m = rls()
+    
+    nums = rls()
+    
+    seen = 0
+    
+    for i in range(n):
+        line = i + 1
+        
+        start = line + 1
+        
+        end = min(m, line + nums[i])
+        seen += max(0, end - start + 1)
 
-    yn((n + m) >= (a + b))
+    print(seen)
     
 def main():
     t = 1

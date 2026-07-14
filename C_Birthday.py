@@ -44,18 +44,32 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
-
+    n = ri()
     nums = rls()
+    nums.sort()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    result = deque([nums.pop()])
 
-    print(b + total)
+    while len(nums) >= 2:
+        left = nums.pop()
+        right = nums.pop()
+
+        result.appendleft(left)
+        result.append(right)
+
+    if nums:
+        if result[0] - nums[0]:
+            result.appendleft(nums.pop())
+
+        else:
+            result.append(nums.pop())
+
+    print(*result)
 
 
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

@@ -17,18 +17,19 @@ def yn(res): print("YES" if res else "NO")
 
 def acc(arr): return list(accumulate(arr))
 rand = random.getrandbits(32)
-def xor(x): return x ^ rand
+def xor(x): return x ^ rand 
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
 def solution(_):
-    n, m, a, b = rls()
+    a, b = rls()
 
-    yn((n + m) >= (a + b))
-    
+    print(a - b if a >= b else 0)
+
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

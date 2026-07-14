@@ -42,15 +42,38 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
+
 
 def solution(_):
-    a, b, n = rls()
+    n, k = rls()
 
-    nums = rls()
+    health = rls()
+    positions = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    beasts = [[h, abs(p)] for h, p in zip(health, positions)]
+    beasts.sort(key=lambda beast: beast[1])
+    beasts = deque(beasts)
 
-    print(b + total)
+    steps = 0
+
+    while beasts and beasts[0][1] - steps > 0:
+        shots = k
+
+        # shots
+        while beasts and shots > 0:
+            bullet = min(shots, beasts[0][0])
+
+            beasts[0][0] -= bullet
+
+            if beasts[0][0] == 0:
+                beasts.popleft()
+
+            shots = shots - bullet
+
+        steps += 1
+
+    yn(len(beasts) == 0)
 
 
 def main():

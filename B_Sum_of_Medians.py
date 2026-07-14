@@ -42,15 +42,39 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
+
+
+def median(arr):
+    n = len(arr)
+    mid = (n + 1) // 2
+
+    return arr[mid - 1]
+
 
 def solution(_):
-    a, b, n = rls()
-
+    n, k = rls()
     nums = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    nums.sort()
+    result = []
 
-    print(b + total)
+    for i in range(k):
+        cur = []
+        for j in range(i, n * k, k):
+            cur.append(nums[j])
+
+        result.append(cur)
+
+    # print(nums)
+    # print(result)
+
+    total = 0
+
+    for arr in result:
+        total += median(arr)
+
+    print(total)
 
 
 def main():

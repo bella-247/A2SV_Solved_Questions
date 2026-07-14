@@ -44,13 +44,33 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
+    c = ri()
+    neg = False
+    if c < 0:
+        neg = True
+        c = -c
 
-    nums = rls()
+    def result(x):
+        return x**7 + 3 * x**3 + x
 
-    total = sum(min(a - 1, tool) for tool in nums)
 
-    print(b + total)
+    left = 0
+    right = 1000
+
+    while right - left > 10 ** (-7):
+        mid = (right + left) / 2
+
+        res = result(mid)
+
+        if res > c:
+            right = mid
+
+        else:
+            left = mid
+
+    if neg:
+        return print(0-left)
+    return print(left)
 
 
 def main():

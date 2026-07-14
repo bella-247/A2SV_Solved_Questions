@@ -44,13 +44,34 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
+    a, b = rls()
 
-    nums = rls()
+    directions = [
+        (a, -b),
+        (a, b),
+        (b, -a),
+        (b, a),
+        (-a, -b),
+        (-a, b),
+        (-b, -a),
+        (-b, a),
+    ]
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    king = rls()
 
-    print(b + total)
+    posK = set()
+
+    for dr, dc in directions:
+        posK.add((king[0] + dr, king[1] + dc))
+
+    queen = rls()
+    posQ = set()
+
+    for dr, dc in directions:
+        posQ.add((queen[0] + dr, queen[1] + dc))
+
+
+    print(len(posK & posQ))
 
 
 def main():

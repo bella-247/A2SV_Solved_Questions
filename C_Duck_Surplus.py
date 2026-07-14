@@ -42,17 +42,49 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
 
+class UnionFind:
+    def __init__(self, n):
+        self.root = list(range(n + 1))
+
+    def find(self, x):
+        if self.root[x] != x:
+            self.root[x] = self.find(self.root[x])
+        return self.root[x]
+
+    def erase(self, x):
+        self.root[x] = self.find(x + 1)
+        
 def solution(_):
-    a, b, n = rls()
+    n = ri()
+    a = rls()
 
-    nums = rls()
+    suf = [0] * (n + 1)
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    for i in range(n - 1, -1, -1):
+        suf[i] = suf[i + 1] + a[i]
 
-    print(b + total)
+    uf = UnionFind(n)
 
+    ans = 0
 
+    for i in range(n - 1, -1, -1):
+        j = i + 1
+
+        while j < n:
+            cur = suf[i] - suf[j]
+
+            if a[j] >= cur:
+                break
+
+            uf.erase(j)
+            j = uf.find(j)
+
+        ans = max(ans, suf[i] - suf[j])
+
+    print(ans)
+    
 def main():
     t = 1
     t = ri()

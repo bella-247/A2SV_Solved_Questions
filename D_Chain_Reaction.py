@@ -42,15 +42,37 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
 
 def solution(_):
-    a, b, n = rls()
+    a, b = rls()
+    s = rs()
+    n = len(s)
+    nums = list(map(int, list(s)))
 
-    nums = rls()
+    stack = []
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    left = 0
+    for right in range(n):
+        if nums[right] == 0:
+            left = right + 1
 
-    print(b + total)
+        elif stack and stack[-1][0] == left:
+            stack.pop()
+            stack.append([left, right])
+
+        else:
+            stack.append([left, right])
+
+    k = len(stack)
+
+    cost = a if k > 0 else 0
+
+    for i in range(1, k):
+        gap = stack[i][0] - stack[i - 1][1] - 1
+        cost += min(gap * b, a)
+
+    print(cost)
 
 
 def main():

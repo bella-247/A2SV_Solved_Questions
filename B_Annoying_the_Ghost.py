@@ -42,15 +42,38 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
+
 
 def solution(_):
-    a, b, n = rls()
+    n = ri()
+    a = rls()
+    b = rls()
 
-    nums = rls()
+    sorted_a = sorted(a)
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    for i in range(n):
+        smalls = bisect_right(sorted_a, b[i])
 
-    print(b + total)
+        if smalls < i + 1:
+            return print(-1)
+
+    total = 0
+
+    for i in range(n):
+        if a[i] <= b[i]:
+            continue
+
+        index = -1
+        for j in range(i + 1, n):
+            if a[j] <= b[i]:
+                index = j
+                break
+
+        a.insert(i, a.pop(index))
+        total += abs(index - i)
+
+    print(total)
 
 
 def main():

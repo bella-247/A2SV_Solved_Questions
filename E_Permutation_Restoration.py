@@ -42,15 +42,36 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
+
 
 def solution(_):
-    a, b, n = rls()
-
+    n = ri()
     nums = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    def rangee(index, num):
+        pos = index + 1
+        if num == 0:
+            return [n, pos + 1, index]
 
-    print(b + total)
+        upper = pos // num
+        lower = pos // (num + 1) + 1
+
+        return [upper, lower, index]
+
+    intervals = []
+
+    for i in range(n):
+        intervals.append(rangee(i, nums[i]))
+
+    intervals.sort()
+    # print(intervals)
+    num = 1
+    for _, __, index in intervals:
+        nums[index] = num
+        num += 1
+
+    print(*nums)
 
 
 def main():

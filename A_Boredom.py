@@ -1,3 +1,4 @@
+from operator import countOf
 import random, math, sys, heapq as heap
 from itertools import accumulate
 from math import ceil, sqrt, log, log2, floor, gcd, inf, isqrt, lcm
@@ -39,23 +40,44 @@ rand = random.getrandbits(32)
 def xor(x):
     return x ^ rand
 
-
-# sys.setrecursionlimit(200000) # don't forget to use python 3
+# sys.setrecursionlimit(200000)  # don't forget to use python 3
 
 
 def solution(_):
-    a, b, n = rls()
-
+    n = ri()
     nums = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    counts = Counter(nums)
+    nums = sorted(counts)
+    n = len(nums)
 
-    print(b + total)
+    memo = [-1] * n
+
+    def dp(i):
+        if i >= n:
+            return 0
+
+        if memo[i] != -1:
+            return memo[i]
+
+        best = nums[i] * counts[nums[i]]
+
+        if i < n - 1 and nums[i + 1] != nums[i] + 1:
+            best += dp(i + 1)
+
+        else:
+            best += max(dp(i + 2), dp(i + 3))
+
+        memo[i] = best
+
+        return memo[i]
+
+    return print(max(dp(0), dp(1)))
 
 
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

@@ -43,14 +43,54 @@ def xor(x):
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
 
-def solution(_):
-    a, b, n = rls()
+def C1(index, arr):
+    if index == -1:
+        return []
 
+    flipped = False
+    actions = []
+
+    for i in range(index - 1, -1, -1):
+        if flipped and arr[i] < 0:
+            actions.append(i + 1)
+            flipped = not flipped
+        elif not flipped and arr[i] > 0:
+            actions.append(i + 1)
+            flipped = not flipped
+
+    return actions + [index + 1]
+
+
+INF = 10**18
+
+
+def solution(_):
+    n = ri()
     nums = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    prefix = [0]
 
-    print(b + total)
+    for i in range(n):
+        prefix.append(prefix[-1] + abs(nums[i]))
+
+    suffix = [0] * (n + 1)
+
+    for i in range(n - 2, -1, -1):
+        suffix[i] = suffix[i + 1] + nums[i + 1]
+
+    maxx = sum(nums)
+    max_index = -1
+
+    for i in range(n):
+        if nums[i] > 0:
+            res = prefix[i] + suffix[i] - nums[i]
+            if res > maxx:
+                maxx = res
+                max_index = i
+
+    result = C1(max_index, nums)
+    print(len(result))
+    print(*result)
 
 
 def main():
@@ -62,3 +102,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

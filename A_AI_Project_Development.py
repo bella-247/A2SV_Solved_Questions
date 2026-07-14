@@ -17,15 +17,21 @@ def yn(res): print("YES" if res else "NO")
 
 def acc(arr): return list(accumulate(arr))
 rand = random.getrandbits(32)
-def xor(x): return x ^ rand
+def xor(x): return x ^ rand 
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
 def solution(_):
-    n, m, a, b = rls()
+    n, x, y, z = rls()    
 
-    yn((n + m) >= (a + b))
+    speed1 = x + y
+    speed2_lines = max(0, n - z * x)
+    speed2 = 10 * y +  x
     
+    print(min(math.ceil(n / speed1), z + math.ceil(speed2_lines / speed2)))
+
+
 def main():
     t = 1
     t = ri()

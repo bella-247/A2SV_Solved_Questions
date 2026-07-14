@@ -42,15 +42,32 @@ def xor(x):
 
 # sys.setrecursionlimit(200000) # don't forget to use python 3
 
+INF = 10**18
+
 
 def solution(_):
-    a, b, n = rls()
+    n = ri()
 
-    nums = rls()
+    seen = {}
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    shortest = inf
 
-    print(b + total)
+    for i in range(n):
+        m, s = rs().split()
+        m = int(m)
+
+        if s == "11":
+            shortest = min(shortest, m)
+
+        elif s == "01" and "10" in seen:
+            shortest = min(shortest, m + seen["10"])
+
+        elif s == "10" and "01" in seen:
+            shortest = min(shortest, m + seen["01"])
+
+        seen[s] = min(seen.get(s, inf), m)
+
+    print(shortest if shortest < inf else -1)
 
 
 def main():

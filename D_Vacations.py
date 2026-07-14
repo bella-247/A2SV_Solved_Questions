@@ -44,18 +44,47 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
-
+    n = ri()
     nums = rls()
 
-    total = sum(min(a - 1, tool) for tool in nums)
+    memo = {}
 
-    print(b + total)
+    def dp(i, prev):
+        if i == n:
+            return 0
+
+        if (i, prev) in memo:
+            return memo[(i, prev)]
+
+        if nums[i] == 0:
+            memo[(i, prev)] = 1 + dp(i + 1, nums[i])
+
+        if nums[i] == 1:
+            if prev == 1:
+                memo[(i, prev)] = 1 + dp(i + 1, 0)
+            else:
+                memo[(i, prev)] = dp(i + 1, 1)
+
+        if nums[i] == 2:
+            if prev == 2:
+                memo[(i, prev)] = 1 + dp(i + 1, 0)
+            else:
+                memo[(i, prev)] = dp(i + 1, 2)
+
+        if nums[i] == 3:
+            one = dp(i + 1, 2) if prev == 1 else dp(i + 1, 1)
+            two = dp(i + 1, 1) if prev == 2 else dp(i + 1, 2)
+
+            memo[(i, prev)] = min(one, two)
+
+        return memo[(i, prev)]
+
+    print(dp(0, 0))
 
 
 def main():
     t = 1
-    t = ri()
+    # t = ri()
     for _ in range(t):
         solution(_)
 

@@ -44,13 +44,26 @@ def xor(x):
 
 
 def solution(_):
-    a, b, n = rls()
-
-    nums = rls()
-
-    total = sum(min(a - 1, tool) for tool in nums)
-
-    print(b + total)
+    n, k, b = rls()
+    arr = rls()
+    arr.sort()
+    end = n - 1
+    i = 0
+    con = 0
+    while i <= end:
+        if arr[i] <= k:
+            # print("c",con)
+            con += 1
+            k -= arr[i]
+            i += 1
+            if i > end:
+                break
+            if con == b:
+                con = 0
+                end -= 1
+        else:
+            break
+    print(i + n - end - 1)
 
 
 def main():
